@@ -6,6 +6,14 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		36F71DAE2F311CBE007874F7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 36F71DA92F311CBE007874F7 /* Assets.xcassets */; };
+		36F71DAF2F311CBE007874F7 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36F71DAA2F311CBE007874F7 /* ContentView.swift */; };
+		36F71DB02F311CBE007874F7 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36F71DAB2F311CBE007874F7 /* Item.swift */; };
+		36F71DB12F311CBE007874F7 /* RVTripPlannerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36F71DAC2F311CBE007874F7 /* RVTripPlannerApp.swift */; };
+		36F71DB32F311CD9007874F7 /* Readme.md in Sources */ = {isa = PBXBuildFile; fileRef = 36F71DB22F311CD4007874F7 /* Readme.md */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXContainerItemProxy section */
 		36F71D8D2F311C27007874F7 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -27,14 +35,14 @@
 		36F71D7D2F311C25007874F7 /* RVTripPlanner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RVTripPlanner.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		36F71D8C2F311C27007874F7 /* RVTripPlannerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RVTripPlannerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		36F71D962F311C27007874F7 /* RVTripPlannerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RVTripPlannerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		36F71DA92F311CBE007874F7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		36F71DAA2F311CBE007874F7 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		36F71DAB2F311CBE007874F7 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
+		36F71DAC2F311CBE007874F7 /* RVTripPlannerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RVTripPlannerApp.swift; sourceTree = "<group>"; };
+		36F71DB22F311CD4007874F7 /* Readme.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = Readme.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		36F71D7F2F311C25007874F7 /* RVTripPlanner */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = RVTripPlanner;
-			sourceTree = "<group>";
-		};
 		36F71D8F2F311C27007874F7 /* RVTripPlannerTests */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			path = RVTripPlannerTests;
@@ -75,7 +83,7 @@
 		36F71D742F311C25007874F7 = {
 			isa = PBXGroup;
 			children = (
-				36F71D7F2F311C25007874F7 /* RVTripPlanner */,
+				36F71DAD2F311CBE007874F7 /* RVTripPlanner */,
 				36F71D8F2F311C27007874F7 /* RVTripPlannerTests */,
 				36F71D992F311C27007874F7 /* RVTripPlannerUITests */,
 				36F71D7E2F311C25007874F7 /* Products */,
@@ -92,6 +100,18 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		36F71DAD2F311CBE007874F7 /* RVTripPlanner */ = {
+			isa = PBXGroup;
+			children = (
+				36F71DB22F311CD4007874F7 /* Readme.md */,
+				36F71DA92F311CBE007874F7 /* Assets.xcassets */,
+				36F71DAA2F311CBE007874F7 /* ContentView.swift */,
+				36F71DAB2F311CBE007874F7 /* Item.swift */,
+				36F71DAC2F311CBE007874F7 /* RVTripPlannerApp.swift */,
+			);
+			path = RVTripPlanner;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -106,9 +126,6 @@
 			buildRules = (
 			);
 			dependencies = (
-			);
-			fileSystemSynchronizedGroups = (
-				36F71D7F2F311C25007874F7 /* RVTripPlanner */,
 			);
 			name = RVTripPlanner;
 			packageProductDependencies = (
@@ -212,6 +229,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				36F71DAE2F311CBE007874F7 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -236,6 +254,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				36F71DAF2F311CBE007874F7 /* ContentView.swift in Sources */,
+				36F71DB32F311CD9007874F7 /* Readme.md in Sources */,
+				36F71DB02F311CBE007874F7 /* Item.swift in Sources */,
+				36F71DB12F311CBE007874F7 /* RVTripPlannerApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
