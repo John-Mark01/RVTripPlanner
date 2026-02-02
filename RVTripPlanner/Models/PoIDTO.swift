@@ -7,37 +7,37 @@
 
 import Foundation
 
-struct PoIDTO: Codable, Identifiable {
-    let id: Int
-    let name: String
-    let url: String
-    let rating: Double?
-    let largeImageURL: String?
-    let combinedRatingAvg: Double?
-    let loc: [Double] // [longitude, latitude]
-    let primaryCategory: String
-    let primaryCategoryDisplayName: String
-    let categoryGroup: String?
-    let tags: [String]
-    let thumbnailURL: String?
-    let mediumImageURL: String?
-    let price: Int?
-    let bookingPrice: Double?
-    let uberRating: Int?
-    let combinedAvgRating: Double?
-    let engagementScore: Double?
-    let bookingURL: String?
-    let reviewsCount: Int?
-    let openNow: Bool?
-    let bookable: Bool
-    let isChain: Bool
-    let tpcID: String?
-    let allowsPets: Bool
-    let searchablePrice: Double?
-    let bookingProviders: [String]
-    let travelRank: String?
-    let branding: String?
-    let segments: [String]
+public struct PoIDTO: Codable, Identifiable {
+    public let id: Int
+    public let name: String
+    public let url: String
+    public let rating: Double?
+    public let largeImageURL: String?
+    public let combinedRatingAvg: Double?
+    public let loc: [Double] // [longitude, latitude]
+    public let primaryCategory: String
+    public let primaryCategoryDisplayName: String
+    public let categoryGroup: String?
+    public let tags: [String]
+    public let thumbnailURL: String?
+    public let mediumImageURL: String?
+    public let price: Int?
+    public let bookingPrice: Double?
+    public let uberRating: Int?
+    public let combinedAvgRating: Double?
+    public let engagementScore: Double?
+    public let bookingURL: String?
+    public let reviewsCount: Int?
+    public let openNow: Bool?
+    public let bookable: Bool
+    public let isChain: Bool
+    public let tpcID: String?
+    public let allowsPets: Bool
+    public let searchablePrice: Double?
+    public let bookingProviders: [String]
+    public let travelRank: String?
+    public let branding: String?
+    public let segments: [String]
     
     enum CodingKeys: String, CodingKey {
         case id
