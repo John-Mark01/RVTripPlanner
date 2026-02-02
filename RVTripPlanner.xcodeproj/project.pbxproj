@@ -104,12 +104,36 @@
 			isa = PBXGroup;
 			children = (
 				36F71DB22F311CD4007874F7 /* Readme.md */,
-				36F71DA92F311CBE007874F7 /* Assets.xcassets */,
-				36F71DAA2F311CBE007874F7 /* ContentView.swift */,
-				36F71DAB2F311CBE007874F7 /* Item.swift */,
 				36F71DAC2F311CBE007874F7 /* RVTripPlannerApp.swift */,
+				36F71DB52F3121E2007874F7 /* Models */,
+				36F71DB62F3121EC007874F7 /* Views */,
+				36F71DB42F3121CC007874F7 /* Supporting Files */,
 			);
 			path = RVTripPlanner;
+			sourceTree = "<group>";
+		};
+		36F71DB42F3121CC007874F7 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				36F71DA92F311CBE007874F7 /* Assets.xcassets */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		36F71DB52F3121E2007874F7 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				36F71DAB2F311CBE007874F7 /* Item.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		36F71DB62F3121EC007874F7 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				36F71DAA2F311CBE007874F7 /* ContentView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
