@@ -12,6 +12,7 @@
 		36F71DB02F311CBE007874F7 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36F71DAB2F311CBE007874F7 /* Item.swift */; };
 		36F71DB12F311CBE007874F7 /* RVTripPlannerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36F71DAC2F311CBE007874F7 /* RVTripPlannerApp.swift */; };
 		36F71DB32F311CD9007874F7 /* Readme.md in Sources */ = {isa = PBXBuildFile; fileRef = 36F71DB22F311CD4007874F7 /* Readme.md */; };
+		36F71DB92F3122A0007874F7 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 36F71DB82F3122A0007874F7 /* Alamofire */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +61,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				36F71DB92F3122A0007874F7 /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -153,6 +155,7 @@
 			);
 			name = RVTripPlanner;
 			packageProductDependencies = (
+				36F71DB82F3122A0007874F7 /* Alamofire */,
 			);
 			productName = RVTripPlanner;
 			productReference = 36F71D7D2F311C25007874F7 /* RVTripPlanner.app */;
@@ -236,6 +239,9 @@
 			);
 			mainGroup = 36F71D742F311C25007874F7;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				36F71DB72F3122A0007874F7 /* XCRemoteSwiftPackageReference "Alamofire" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 36F71D7E2F311C25007874F7 /* Products */;
 			projectDirPath = "";
@@ -624,6 +630,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		36F71DB72F3122A0007874F7 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.11.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		36F71DB82F3122A0007874F7 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 36F71DB72F3122A0007874F7 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 36F71D752F311C25007874F7 /* Project object */;
 }
