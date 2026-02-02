@@ -1,0 +1,25 @@
+{
+  "configurations" : [
+    {
+      "id" : "3F0E8BAB-C074-421F-99B2-8A3AD056B044",
+      "name" : "Test Scheme Action",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "performanceAntipatternCheckerEnabled" : true
+  },
+  "testTargets" : [
+    {
+      "parallelizable" : true,
+      "target" : {
+        "containerPath" : "container:RVTripPlanner.xcodeproj",
+        "identifier" : "36F71D8B2F311C27007874F7",
+        "name" : "RVTripPlannerTests"
+      }
+    }
+  ],
+  "version" : 1
+}

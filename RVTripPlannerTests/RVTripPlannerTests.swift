@@ -6,7 +6,6 @@
 //
 
 import XCTest
-@testable import RVTripPlanner
 
 final class RVTripPlannerTests: XCTestCase {
 

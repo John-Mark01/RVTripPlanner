@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		366DD5D02F31294300AA97ED /* RVTripPlannerTests.xctestplan in Resources */ = {isa = PBXBuildFile; fileRef = 366DD5CE2F31294300AA97ED /* RVTripPlannerTests.xctestplan */; };
+		366DD5D12F31294300AA97ED /* RVTripPlannerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 366DD5CD2F31294300AA97ED /* RVTripPlannerTests.swift */; };
 		36F71DAE2F311CBE007874F7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 36F71DA92F311CBE007874F7 /* Assets.xcassets */; };
 		36F71DAF2F311CBE007874F7 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36F71DAA2F311CBE007874F7 /* ContentView.swift */; };
 		36F71DB02F311CBE007874F7 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36F71DAB2F311CBE007874F7 /* Item.swift */; };
@@ -23,38 +25,20 @@
 			remoteGlobalIDString = 36F71D7C2F311C25007874F7;
 			remoteInfo = RVTripPlanner;
 		};
-		36F71D972F311C27007874F7 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 36F71D752F311C25007874F7 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 36F71D7C2F311C25007874F7;
-			remoteInfo = RVTripPlanner;
-		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		366DD5CA2F31278000AA97ED /* RVTripPlannerTests.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; name = RVTripPlannerTests.xctestplan; path = RVTripPlannerTests/RVTripPlannerTests.xctestplan; sourceTree = "<group>"; };
+		366DD5CD2F31294300AA97ED /* RVTripPlannerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RVTripPlannerTests.swift; sourceTree = "<group>"; };
+		366DD5CE2F31294300AA97ED /* RVTripPlannerTests.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = RVTripPlannerTests.xctestplan; sourceTree = "<group>"; };
 		36F71D7D2F311C25007874F7 /* RVTripPlanner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RVTripPlanner.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		36F71D8C2F311C27007874F7 /* RVTripPlannerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RVTripPlannerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		36F71D962F311C27007874F7 /* RVTripPlannerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RVTripPlannerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		36F71DA92F311CBE007874F7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		36F71DAA2F311CBE007874F7 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		36F71DAB2F311CBE007874F7 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		36F71DAC2F311CBE007874F7 /* RVTripPlannerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RVTripPlannerApp.swift; sourceTree = "<group>"; };
 		36F71DB22F311CD4007874F7 /* Readme.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = Readme.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
-
-/* Begin PBXFileSystemSynchronizedRootGroup section */
-		36F71D8F2F311C27007874F7 /* RVTripPlannerTests */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = RVTripPlannerTests;
-			sourceTree = "<group>";
-		};
-		36F71D992F311C27007874F7 /* RVTripPlannerUITests */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = RVTripPlannerUITests;
-			sourceTree = "<group>";
-		};
-/* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		36F71D7A2F311C25007874F7 /* Frameworks */ = {
@@ -72,22 +56,24 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		36F71D932F311C27007874F7 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		366DD5CF2F31294300AA97ED /* RVTripPlannerTests */ = {
+			isa = PBXGroup;
+			children = (
+				366DD5CD2F31294300AA97ED /* RVTripPlannerTests.swift */,
+				366DD5CE2F31294300AA97ED /* RVTripPlannerTests.xctestplan */,
+			);
+			path = RVTripPlannerTests;
+			sourceTree = "<group>";
+		};
 		36F71D742F311C25007874F7 = {
 			isa = PBXGroup;
 			children = (
+				366DD5CA2F31278000AA97ED /* RVTripPlannerTests.xctestplan */,
 				36F71DAD2F311CBE007874F7 /* RVTripPlanner */,
-				36F71D8F2F311C27007874F7 /* RVTripPlannerTests */,
-				36F71D992F311C27007874F7 /* RVTripPlannerUITests */,
+				366DD5CF2F31294300AA97ED /* RVTripPlannerTests */,
 				36F71D7E2F311C25007874F7 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -97,7 +83,6 @@
 			children = (
 				36F71D7D2F311C25007874F7 /* RVTripPlanner.app */,
 				36F71D8C2F311C27007874F7 /* RVTripPlannerTests.xctest */,
-				36F71D962F311C27007874F7 /* RVTripPlannerUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -174,38 +159,12 @@
 			dependencies = (
 				36F71D8E2F311C27007874F7 /* PBXTargetDependency */,
 			);
-			fileSystemSynchronizedGroups = (
-				36F71D8F2F311C27007874F7 /* RVTripPlannerTests */,
-			);
 			name = RVTripPlannerTests;
 			packageProductDependencies = (
 			);
 			productName = RVTripPlannerTests;
 			productReference = 36F71D8C2F311C27007874F7 /* RVTripPlannerTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
-		};
-		36F71D952F311C27007874F7 /* RVTripPlannerUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 36F71DA62F311C27007874F7 /* Build configuration list for PBXNativeTarget "RVTripPlannerUITests" */;
-			buildPhases = (
-				36F71D922F311C27007874F7 /* Sources */,
-				36F71D932F311C27007874F7 /* Frameworks */,
-				36F71D942F311C27007874F7 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				36F71D982F311C27007874F7 /* PBXTargetDependency */,
-			);
-			fileSystemSynchronizedGroups = (
-				36F71D992F311C27007874F7 /* RVTripPlannerUITests */,
-			);
-			name = RVTripPlannerUITests;
-			packageProductDependencies = (
-			);
-			productName = RVTripPlannerUITests;
-			productReference = 36F71D962F311C27007874F7 /* RVTripPlannerUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
 
@@ -221,10 +180,6 @@
 						CreatedOnToolsVersion = 26.2;
 					};
 					36F71D8B2F311C27007874F7 = {
-						CreatedOnToolsVersion = 26.2;
-						TestTargetID = 36F71D7C2F311C25007874F7;
-					};
-					36F71D952F311C27007874F7 = {
 						CreatedOnToolsVersion = 26.2;
 						TestTargetID = 36F71D7C2F311C25007874F7;
 					};
@@ -249,7 +204,6 @@
 			targets = (
 				36F71D7C2F311C25007874F7 /* RVTripPlanner */,
 				36F71D8B2F311C27007874F7 /* RVTripPlannerTests */,
-				36F71D952F311C27007874F7 /* RVTripPlannerUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -267,13 +221,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		36F71D942F311C27007874F7 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
+				366DD5D02F31294300AA97ED /* RVTripPlannerTests.xctestplan in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -295,13 +243,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		36F71D922F311C27007874F7 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
+				366DD5D12F31294300AA97ED /* RVTripPlannerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -312,11 +254,6 @@
 			isa = PBXTargetDependency;
 			target = 36F71D7C2F311C25007874F7 /* RVTripPlanner */;
 			targetProxy = 36F71D8D2F311C27007874F7 /* PBXContainerItemProxy */;
-		};
-		36F71D982F311C27007874F7 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 36F71D7C2F311C25007874F7 /* RVTripPlanner */;
-			targetProxy = 36F71D972F311C27007874F7 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -457,6 +394,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -465,6 +403,10 @@
 				PRODUCT_BUNDLE_IDENTIFIER = johnmark.RVTripPlanner;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_APPROACHABLE_CONCURRENCY = YES;
 				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -489,6 +431,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -497,6 +440,10 @@
 				PRODUCT_BUNDLE_IDENTIFIER = johnmark.RVTripPlanner;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_APPROACHABLE_CONCURRENCY = YES;
 				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -513,18 +460,25 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = S6ZFW3NA3K;
+				ENABLE_APP_SANDBOX = YES;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_OUTGOING_NETWORK_CONNECTIONS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 26.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.6;
+				MACOSX_DEPLOYMENT_TARGET = 26.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = johnmark.RVTripPlannerTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				REGISTER_APP_GROUPS = YES;
 				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SUPPORTED_PLATFORMS = macosx;
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_APPROACHABLE_CONCURRENCY = YES;
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RVTripPlanner.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/RVTripPlanner";
 			};
 			name = Debug;
 		};
@@ -536,57 +490,20 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = S6ZFW3NA3K;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 26.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.6;
+				MACOSX_DEPLOYMENT_TARGET = 26.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = johnmark.RVTripPlannerTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SUPPORTED_PLATFORMS = macosx;
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_APPROACHABLE_CONCURRENCY = YES;
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RVTripPlanner.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/RVTripPlanner";
-			};
-			name = Release;
-		};
-		36F71DA72F311C27007874F7 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = S6ZFW3NA3K;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = johnmark.RVTripPlannerUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				STRING_CATALOG_GENERATE_SYMBOLS = NO;
-				SWIFT_APPROACHABLE_CONCURRENCY = YES;
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = RVTripPlanner;
-			};
-			name = Debug;
-		};
-		36F71DA82F311C27007874F7 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = S6ZFW3NA3K;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = johnmark.RVTripPlannerUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				STRING_CATALOG_GENERATE_SYMBOLS = NO;
-				SWIFT_APPROACHABLE_CONCURRENCY = YES;
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = RVTripPlanner;
 			};
 			name = Release;
 		};
@@ -616,15 +533,6 @@
 			buildConfigurations = (
 				36F71DA42F311C27007874F7 /* Debug */,
 				36F71DA52F311C27007874F7 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		36F71DA62F311C27007874F7 /* Build configuration list for PBXNativeTarget "RVTripPlannerUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				36F71DA72F311C27007874F7 /* Debug */,
-				36F71DA82F311C27007874F7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
