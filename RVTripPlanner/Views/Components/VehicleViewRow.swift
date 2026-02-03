@@ -17,10 +17,16 @@ struct VehicleViewRow: View {
         guard let data = vehicle.imageData else { return nil }
         return UIImage(data: data)
     }
+    
+    private var fuelType: FuelType {
+        FuelType(rawValue: vehicle.fuelType) ?? .hybrid
+    }
+    
     var body: some View {
-        VStack {
-            HStack(alignment: .top, spacing: 16) {
-                
+        
+        VStack(spacing: 0) {
+            // Image Section
+            ZStack(alignment: .topTrailing) {
                 //Car Image
                 Group {
                     if let image = vehicleImage {
@@ -31,43 +37,44 @@ struct VehicleViewRow: View {
                             .resizable()
                     }
                 }
-                .frame(width: 50, height: 50)
+                .frame(maxHeight: 120)
+                .clipped()
+                .padding(16)
                 
-                VStack(alignment: .leading, spacing: 4) {
-                    Text(vehicle.make)
-                        .font(.title2)
-                        .fontWeight(.semibold)
-                        .foregroundStyle(Color.textPrimary)
-                    
-                    Text(vehicle.model)
-                        .font(.subheadline)
-                        .fontWeight(.medium)
-                        .foregroundStyle(Color.textSecondary)
-                }
-                
-                Spacer()
-                
-                VStack(alignment: .trailing, spacing: 4) {
-                    
-                    Label(
-                        vehicle.fuelType.capitalized,
-                        systemImage: "fuelpump.fill"
-                    )
-                    .font(.subheadline)
-                    .fontWeight(.medium)
-                    .foregroundStyle(Color.textPrimary)
-                    
-                    
-                    Text(vehicle.year)
-                        .font(.caption)
-                        .fontWeight(.semibold)
-                        .foregroundStyle(Color.textPrimary)
-                }
+                // Fuel Badge
+                FuelBadge(fuel: fuelType)
+                    .padding(.vertical, 16)
+                    .padding(.horizontal, 12)
             }
+            
+            
+            VStack(alignment: .leading, spacing: 6) {
+                // Make
+                Text(vehicle.make)
+                    .font(.system(.title3, design: .rounded, weight: .bold))
+                    .foregroundColor(.textSecondary)
+                    .lineLimit(1)
+                
+                // Model
+                Text(vehicle.model)
+                    .font(.system(.headline, design: .rounded, weight: .semibold))
+                    .foregroundColor(.textPrimary)
+                    .lineLimit(1)
+                
+                // Year
+                Text(vehicle.year)
+                    .font(.system(.subheadline, design: .rounded, weight: .regular))
+                    .foregroundColor(.textTertiary)
+            }
+            .frame(maxWidth: .infinity, alignment: .leading)
+            .padding(12)
+            .background(.ultraThinMaterial)
         }
-        .padding(16)
-        .background(Color.appSecondary.opacity(0.3))
-        .clipShape(RoundedRectangle(cornerRadius: 8))
+        .clipShape(RoundedRectangle(cornerRadius: 20))
+        .overlay(
+            RoundedRectangle(cornerRadius: 20)
+                .stroke(Color.white.opacity(0.2), lineWidth: 1)
+        )
         .contextMenu {
             
             //Edit
@@ -76,7 +83,7 @@ struct VehicleViewRow: View {
             }) {
                 Label("Edit", systemImage: "pencil")
             }
-
+            
             //Delete
             Button(action: {
                 onDelete(vehicle)
@@ -93,7 +100,7 @@ struct VehicleViewRow: View {
         make: "Ford",
         model: "Focus 1.6",
         year: "2003",
-        fuelType: FuelType.diesel.rawValue
+        fuelType: FuelType.gas.rawValue
     )
     VStack {
         VehicleViewRow(

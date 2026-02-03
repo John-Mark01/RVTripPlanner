@@ -13,20 +13,26 @@ struct GarageScreen: View {
     @Query private var vehicles: [Vehicle]
     @State private var openSheet: Bool = false
     
+    private let columns = [
+           GridItem(.adaptive(minimum: 160, maximum: 200), spacing: 16)
+       ]
+    
     var body: some View {
         NavigationStack {
-            ScrollView {
-                LazyVStack(alignment: .leading, spacing: 16) {
-                    ForEach(vehicles) { vehicle in
-                        VehicleViewRow(
-                            vehicle: vehicle,
-                            onEdit: { _ in},
-                            onDelete: { modelContext.delete($0) }
-                        )
+            GarageEmptyStateView(condition: vehicles.isEmpty) {
+                ScrollView {
+                    LazyVGrid(columns: columns, spacing: 16) {
+                        ForEach(vehicles) { vehicle in
+                            VehicleViewRow(
+                                vehicle: vehicle,
+                                onEdit: { _ in},
+                                onDelete: { modelContext.delete($0) }
+                            )
+                        }
                     }
                 }
-                .padding(16)
             }
+            .padding(16)
             .animation(.bouncy, value: vehicles)
             .navigationTitle("Garage")
             .background(Color.appBackground)
@@ -39,7 +45,7 @@ struct GarageScreen: View {
                                 make: "Ford",
                                 model: "Focus 1.6",
                                 year: "2003",
-                                fuelType: FuelType.diesel.rawValue
+                                fuelType: FuelType.hybrid.rawValue
                             )
                         )
                     }
@@ -55,5 +61,3 @@ struct GarageScreen: View {
     }
     .modelContainer(for: Vehicle.self, inMemory: true)
 }
-
-

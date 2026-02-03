@@ -20,6 +20,8 @@
 		366DD5F42F3280E300AA97ED /* Vehicle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 366DD5F32F3280E300AA97ED /* Vehicle.swift */; };
 		366DD5F62F3281CC00AA97ED /* FuelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 366DD5F52F3281CC00AA97ED /* FuelType.swift */; };
 		366DD5FA2F32866100AA97ED /* VehicleViewRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 366DD5F92F32866100AA97ED /* VehicleViewRow.swift */; };
+		366DD5FC2F32969500AA97ED /* FuelBadge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 366DD5FB2F32969500AA97ED /* FuelBadge.swift */; };
+		366DD5FF2F329AF600AA97ED /* GarageEmptyStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 366DD5FE2F329AF600AA97ED /* GarageEmptyStateView.swift */; };
 		36F71DAE2F311CBE007874F7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 36F71DA92F311CBE007874F7 /* Assets.xcassets */; };
 		36F71DB12F311CBE007874F7 /* RVTripPlannerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36F71DAC2F311CBE007874F7 /* RVTripPlannerApp.swift */; };
 		36F71DB32F311CD9007874F7 /* Readme.md in Sources */ = {isa = PBXBuildFile; fileRef = 36F71DB22F311CD4007874F7 /* Readme.md */; };
@@ -51,6 +53,8 @@
 		366DD5F32F3280E300AA97ED /* Vehicle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vehicle.swift; sourceTree = "<group>"; };
 		366DD5F52F3281CC00AA97ED /* FuelType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FuelType.swift; sourceTree = "<group>"; };
 		366DD5F92F32866100AA97ED /* VehicleViewRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleViewRow.swift; sourceTree = "<group>"; };
+		366DD5FB2F32969500AA97ED /* FuelBadge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FuelBadge.swift; sourceTree = "<group>"; };
+		366DD5FE2F329AF600AA97ED /* GarageEmptyStateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GarageEmptyStateView.swift; sourceTree = "<group>"; };
 		36F71D7D2F311C25007874F7 /* RVTripPlanner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RVTripPlanner.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		36F71D8C2F311C27007874F7 /* RVTripPlannerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RVTripPlannerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		36F71DA92F311CBE007874F7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -95,6 +99,16 @@
 				366DD5E62F326CF800AA97ED /* POIService.swift */,
 			);
 			path = Services;
+			sourceTree = "<group>";
+		};
+		366DD5FD2F3296A500AA97ED /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				366DD5FE2F329AF600AA97ED /* GarageEmptyStateView.swift */,
+				366DD5F92F32866100AA97ED /* VehicleViewRow.swift */,
+				366DD5FB2F32969500AA97ED /* FuelBadge.swift */,
+			);
+			path = Components;
 			sourceTree = "<group>";
 		};
 		36F71D742F311C25007874F7 = {
@@ -153,7 +167,7 @@
 				366DD5ED2F32774300AA97ED /* HomeScreenTabBar.swift */,
 				366DD5EF2F3279C400AA97ED /* GarageScreen.swift */,
 				366DD5F12F3279E900AA97ED /* PlacesScreen.swift */,
-				366DD5F92F32866100AA97ED /* VehicleViewRow.swift */,
+				366DD5FD2F3296A500AA97ED /* Components */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -269,6 +283,8 @@
 			files = (
 				36F71DB32F311CD9007874F7 /* Readme.md in Sources */,
 				366DD5E72F326CF800AA97ED /* HTTPClient.swift in Sources */,
+				366DD5FC2F32969500AA97ED /* FuelBadge.swift in Sources */,
+				366DD5FF2F329AF600AA97ED /* GarageEmptyStateView.swift in Sources */,
 				366DD5E82F326CF800AA97ED /* HTTPError.swift in Sources */,
 				366DD5F02F3279C400AA97ED /* GarageScreen.swift in Sources */,
 				366DD5E92F326CF800AA97ED /* POIService.swift in Sources */,
