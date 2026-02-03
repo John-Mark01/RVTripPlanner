@@ -17,6 +17,9 @@
 		366DD5EE2F32774300AA97ED /* HomeScreenTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 366DD5ED2F32774300AA97ED /* HomeScreenTabBar.swift */; };
 		366DD5F02F3279C400AA97ED /* GarageScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 366DD5EF2F3279C400AA97ED /* GarageScreen.swift */; };
 		366DD5F22F3279E900AA97ED /* PlacesScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 366DD5F12F3279E900AA97ED /* PlacesScreen.swift */; };
+		366DD5F42F3280E300AA97ED /* Vehicle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 366DD5F32F3280E300AA97ED /* Vehicle.swift */; };
+		366DD5F62F3281CC00AA97ED /* FuelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 366DD5F52F3281CC00AA97ED /* FuelType.swift */; };
+		366DD5FA2F32866100AA97ED /* VehicleViewRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 366DD5F92F32866100AA97ED /* VehicleViewRow.swift */; };
 		36F71DAE2F311CBE007874F7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 36F71DA92F311CBE007874F7 /* Assets.xcassets */; };
 		36F71DB12F311CBE007874F7 /* RVTripPlannerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36F71DAC2F311CBE007874F7 /* RVTripPlannerApp.swift */; };
 		36F71DB32F311CD9007874F7 /* Readme.md in Sources */ = {isa = PBXBuildFile; fileRef = 36F71DB22F311CD4007874F7 /* Readme.md */; };
@@ -45,6 +48,9 @@
 		366DD5ED2F32774300AA97ED /* HomeScreenTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenTabBar.swift; sourceTree = "<group>"; };
 		366DD5EF2F3279C400AA97ED /* GarageScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GarageScreen.swift; sourceTree = "<group>"; };
 		366DD5F12F3279E900AA97ED /* PlacesScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacesScreen.swift; sourceTree = "<group>"; };
+		366DD5F32F3280E300AA97ED /* Vehicle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vehicle.swift; sourceTree = "<group>"; };
+		366DD5F52F3281CC00AA97ED /* FuelType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FuelType.swift; sourceTree = "<group>"; };
+		366DD5F92F32866100AA97ED /* VehicleViewRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleViewRow.swift; sourceTree = "<group>"; };
 		36F71D7D2F311C25007874F7 /* RVTripPlanner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RVTripPlanner.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		36F71D8C2F311C27007874F7 /* RVTripPlannerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RVTripPlannerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		36F71DA92F311CBE007874F7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -134,7 +140,9 @@
 		36F71DB52F3121E2007874F7 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				366DD5F52F3281CC00AA97ED /* FuelType.swift */,
 				366DD5E52F326CF800AA97ED /* PoIModel.swift */,
+				366DD5F32F3280E300AA97ED /* Vehicle.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -145,6 +153,7 @@
 				366DD5ED2F32774300AA97ED /* HomeScreenTabBar.swift */,
 				366DD5EF2F3279C400AA97ED /* GarageScreen.swift */,
 				366DD5F12F3279E900AA97ED /* PlacesScreen.swift */,
+				366DD5F92F32866100AA97ED /* VehicleViewRow.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -264,8 +273,11 @@
 				366DD5F02F3279C400AA97ED /* GarageScreen.swift in Sources */,
 				366DD5E92F326CF800AA97ED /* POIService.swift in Sources */,
 				366DD5EA2F326CF800AA97ED /* PoIModel.swift in Sources */,
+				366DD5FA2F32866100AA97ED /* VehicleViewRow.swift in Sources */,
 				366DD5EE2F32774300AA97ED /* HomeScreenTabBar.swift in Sources */,
+				366DD5F62F3281CC00AA97ED /* FuelType.swift in Sources */,
 				36F71DB12F311CBE007874F7 /* RVTripPlannerApp.swift in Sources */,
+				366DD5F42F3280E300AA97ED /* Vehicle.swift in Sources */,
 				366DD5F22F3279E900AA97ED /* PlacesScreen.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
