@@ -9,12 +9,15 @@
 /* Begin PBXBuildFile section */
 		366DD5D02F31294300AA97ED /* RVTripPlannerTests.xctestplan in Resources */ = {isa = PBXBuildFile; fileRef = 366DD5CE2F31294300AA97ED /* RVTripPlannerTests.xctestplan */; };
 		366DD5D12F31294300AA97ED /* HTTPClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 366DD5CD2F31294300AA97ED /* HTTPClientTests.swift */; };
-		366DD5D32F312FDF00AA97ED /* PoIDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 366DD5D22F312FDF00AA97ED /* PoIDTO.swift */; };
 		366DD5D62F3134B400AA97ED /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 366DD5D52F3134B400AA97ED /* Helpers.swift */; };
-		366DD5D72F31354000AA97ED /* PoIDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 366DD5D22F312FDF00AA97ED /* PoIDTO.swift */; };
+		366DD5E72F326CF800AA97ED /* HTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 366DD5E32F326CF800AA97ED /* HTTPClient.swift */; };
+		366DD5E82F326CF800AA97ED /* HTTPError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 366DD5E42F326CF800AA97ED /* HTTPError.swift */; };
+		366DD5E92F326CF800AA97ED /* POIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 366DD5E62F326CF800AA97ED /* POIService.swift */; };
+		366DD5EA2F326CF800AA97ED /* PoIModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 366DD5E52F326CF800AA97ED /* PoIModel.swift */; };
+		366DD5EE2F32774300AA97ED /* HomeScreenTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 366DD5ED2F32774300AA97ED /* HomeScreenTabBar.swift */; };
+		366DD5F02F3279C400AA97ED /* GarageScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 366DD5EF2F3279C400AA97ED /* GarageScreen.swift */; };
+		366DD5F22F3279E900AA97ED /* PlacesScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 366DD5F12F3279E900AA97ED /* PlacesScreen.swift */; };
 		36F71DAE2F311CBE007874F7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 36F71DA92F311CBE007874F7 /* Assets.xcassets */; };
-		36F71DAF2F311CBE007874F7 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36F71DAA2F311CBE007874F7 /* ContentView.swift */; };
-		36F71DB02F311CBE007874F7 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36F71DAB2F311CBE007874F7 /* Item.swift */; };
 		36F71DB12F311CBE007874F7 /* RVTripPlannerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36F71DAC2F311CBE007874F7 /* RVTripPlannerApp.swift */; };
 		36F71DB32F311CD9007874F7 /* Readme.md in Sources */ = {isa = PBXBuildFile; fileRef = 36F71DB22F311CD4007874F7 /* Readme.md */; };
 		36F71DB92F3122A0007874F7 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 36F71DB82F3122A0007874F7 /* Alamofire */; };
@@ -34,13 +37,17 @@
 		366DD5CA2F31278000AA97ED /* RVTripPlannerTests.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; name = RVTripPlannerTests.xctestplan; path = RVTripPlannerTests/RVTripPlannerTests.xctestplan; sourceTree = "<group>"; };
 		366DD5CD2F31294300AA97ED /* HTTPClientTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPClientTests.swift; sourceTree = "<group>"; };
 		366DD5CE2F31294300AA97ED /* RVTripPlannerTests.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = RVTripPlannerTests.xctestplan; sourceTree = "<group>"; };
-		366DD5D22F312FDF00AA97ED /* PoIDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoIDTO.swift; sourceTree = "<group>"; };
 		366DD5D52F3134B400AA97ED /* Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
+		366DD5E32F326CF800AA97ED /* HTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPClient.swift; sourceTree = "<group>"; };
+		366DD5E42F326CF800AA97ED /* HTTPError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPError.swift; sourceTree = "<group>"; };
+		366DD5E52F326CF800AA97ED /* PoIModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoIModel.swift; sourceTree = "<group>"; };
+		366DD5E62F326CF800AA97ED /* POIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = POIService.swift; sourceTree = "<group>"; };
+		366DD5ED2F32774300AA97ED /* HomeScreenTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenTabBar.swift; sourceTree = "<group>"; };
+		366DD5EF2F3279C400AA97ED /* GarageScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GarageScreen.swift; sourceTree = "<group>"; };
+		366DD5F12F3279E900AA97ED /* PlacesScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacesScreen.swift; sourceTree = "<group>"; };
 		36F71D7D2F311C25007874F7 /* RVTripPlanner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RVTripPlanner.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		36F71D8C2F311C27007874F7 /* RVTripPlannerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RVTripPlannerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		36F71DA92F311CBE007874F7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		36F71DAA2F311CBE007874F7 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		36F71DAB2F311CBE007874F7 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		36F71DAC2F311CBE007874F7 /* RVTripPlannerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RVTripPlannerApp.swift; sourceTree = "<group>"; };
 		36F71DB22F311CD4007874F7 /* Readme.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = Readme.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -74,6 +81,16 @@
 			path = RVTripPlannerTests;
 			sourceTree = "<group>";
 		};
+		366DD5DE2F31468700AA97ED /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				366DD5E32F326CF800AA97ED /* HTTPClient.swift */,
+				366DD5E42F326CF800AA97ED /* HTTPError.swift */,
+				366DD5E62F326CF800AA97ED /* POIService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
 		36F71D742F311C25007874F7 = {
 			isa = PBXGroup;
 			children = (
@@ -100,6 +117,7 @@
 				36F71DAC2F311CBE007874F7 /* RVTripPlannerApp.swift */,
 				36F71DB52F3121E2007874F7 /* Models */,
 				36F71DB62F3121EC007874F7 /* Views */,
+				366DD5DE2F31468700AA97ED /* Services */,
 				36F71DB42F3121CC007874F7 /* Supporting Files */,
 			);
 			path = RVTripPlanner;
@@ -116,8 +134,7 @@
 		36F71DB52F3121E2007874F7 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				36F71DAB2F311CBE007874F7 /* Item.swift */,
-				366DD5D22F312FDF00AA97ED /* PoIDTO.swift */,
+				366DD5E52F326CF800AA97ED /* PoIModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -125,7 +142,9 @@
 		36F71DB62F3121EC007874F7 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				36F71DAA2F311CBE007874F7 /* ContentView.swift */,
+				366DD5ED2F32774300AA97ED /* HomeScreenTabBar.swift */,
+				366DD5EF2F3279C400AA97ED /* GarageScreen.swift */,
+				366DD5F12F3279E900AA97ED /* PlacesScreen.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -239,11 +258,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				36F71DAF2F311CBE007874F7 /* ContentView.swift in Sources */,
 				36F71DB32F311CD9007874F7 /* Readme.md in Sources */,
-				366DD5D32F312FDF00AA97ED /* PoIDTO.swift in Sources */,
-				36F71DB02F311CBE007874F7 /* Item.swift in Sources */,
+				366DD5E72F326CF800AA97ED /* HTTPClient.swift in Sources */,
+				366DD5E82F326CF800AA97ED /* HTTPError.swift in Sources */,
+				366DD5F02F3279C400AA97ED /* GarageScreen.swift in Sources */,
+				366DD5E92F326CF800AA97ED /* POIService.swift in Sources */,
+				366DD5EA2F326CF800AA97ED /* PoIModel.swift in Sources */,
+				366DD5EE2F32774300AA97ED /* HomeScreenTabBar.swift in Sources */,
 				36F71DB12F311CBE007874F7 /* RVTripPlannerApp.swift in Sources */,
+				366DD5F22F3279E900AA97ED /* PlacesScreen.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -253,7 +276,6 @@
 			files = (
 				366DD5D62F3134B400AA97ED /* Helpers.swift in Sources */,
 				366DD5D12F31294300AA97ED /* HTTPClientTests.swift in Sources */,
-				366DD5D72F31354000AA97ED /* PoIDTO.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
