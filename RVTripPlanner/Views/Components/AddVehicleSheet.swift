@@ -126,30 +126,16 @@ struct AddVehicleSheet: View {
     }
     
     private func createVehicle() -> Vehicle {
-        let formatter = DateFormatter()
-        formatter.dateFormat = "yyyy"
-        print(formatter.string(from: self.vehicleYear))
         return Vehicle(
             make: self.vehicleMake,
             model: self.vehicleModel,
-            year: formatter.string(from: self.vehicleYear),
+            year: vehicleYear.formatToYearString(),
             fuelType: self.vehicleFuelType.rawValue,
             imageData: self.vehiclePhotoData,
             nickname: self.vehicleNickname
         )
     }
     
-}
-
-extension Data {
-    func transformIntoImageData() -> Data? {
-        let image = UIImage(data: self)
-        let size = CGSize(width: 300, height: 300)
-        if let thumb = image?.preparingThumbnail(of: size) {
-            return thumb.jpegData(compressionQuality: 1.0)
-        }
-        return nil
-    }
 }
 
 #Preview {
