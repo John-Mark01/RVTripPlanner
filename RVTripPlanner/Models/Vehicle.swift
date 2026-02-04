@@ -10,25 +10,27 @@ import SwiftData
 
 @Model
 final class Vehicle: Identifiable {
-    @Attribute(.unique)
-    var id: UUID
+    @Attribute(.unique) var id: UUID
+    var type: String
     var make: String
     var model: String
-    var year: String
+    var year: Date
     var fuelType: String
     var imageData: Data?
     var nickname: String?
     
     init(
         id: UUID = UUID(),
+        type: String,
         make: String,
         model: String,
-        year: String,
+        year: Date,
         fuelType: String,
         imageData: Data? = nil,
         nickname: String? = nil
     ) {
         self.id = id
+        self.type = type
         self.make = make
         self.model = model
         self.year = year
