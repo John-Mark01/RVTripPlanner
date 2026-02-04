@@ -10,6 +10,7 @@ import SwiftUI
 struct PlacesScreen: View {
     @Environment(\.modelContext) private var modelContext
     @State private var viewModel: PlacesScreenViewModel
+    @State private var selectedPOI: PoIModel?
     
     init(poiService: POIService) {
         self.viewModel = PlacesScreenViewModel(poiService: poiService)
@@ -17,35 +18,41 @@ struct PlacesScreen: View {
     
     var body: some View {
         NavigationStack {
-            //Segments
-            Picker("", selection: $viewModel.selectedTab) {
-                ForEach(PlacesTabs.allCases, id: \.self) { tab in
-                    Text(tab.rawValue.capitalized)
-                }
-            }
-            .pickerStyle(.segmented)
-            .applyViewPaddings(.all)
-            
-            switch viewModel.selectedTab {
-            case .list:
-                List {
-                    Section {
-                        ForEach(viewModel.pois, id: \.id) { poi in
-                            POIViewRow(poi: poi)
-                        }
-                    } header: {
-                        Text("New")
-                            .font(.title)
-                            .fontWeight(.heavy)
-                            .foregroundStyle(.textPrimary)
+            VStack(spacing: 0) {
+                //Segments
+                Picker("", selection: $viewModel.selectedTab) {
+                    ForEach(PlacesTabs.allCases, id: \.self) { tab in
+                        Text(tab.rawValue.capitalized)
                     }
                 }
-                .listRowSeparator(.hidden)
-                .listRowSpacing(AppConstants.vstackSpacing / 2)
-                .applyBackground()
+                .pickerStyle(.segmented)
+                .applyViewPaddings(.all)
                 
-            case .map:
-                EmptyView()
+                switch viewModel.selectedTab {
+                case .list:
+                    List {
+                        Section {
+                            ForEach(viewModel.pois, id: \.id) { poi in
+                                PoIViewRow(poi: poi)
+                                    .onTapGesture { selectedPOI = poi }
+                            }
+                        } header: {
+                            Text("New")
+                                .font(.title)
+                                .fontWeight(.heavy)
+                                .foregroundStyle(.textPrimary)
+                        }
+                    }
+                    .listRowSeparator(.hidden)
+                    .listRowSpacing(AppConstants.vstackSpacing / 2)
+                    .applyBackground()
+                    
+                case .map:
+                    EmptyView()
+                }
+            }
+            .navigationDestination(item: $selectedPOI) { poi in
+                PoIDetailsScreen(poi: poi, onSave: {_ in})
             }
         }
         .navigationTitle("Places")

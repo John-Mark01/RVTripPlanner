@@ -1,5 +1,5 @@
 //
-//  POIViewRow.swift
+//  PoIViewRow.swift
 //  RVTripPlanner
 //
 //  Created by John-Mark Iliev on 4.02.26.
@@ -7,14 +7,14 @@
 
 import SwiftUI
 
-struct POIViewRow: View {
+struct PoIViewRow: View {
     let poi: PoIModel
     
     var body: some View {
         VStack(spacing: 0) {
-            // Image Section
+            
+            //POI Image + Badge
             ZStack(alignment: .topTrailing) {
-                //Car Image
                 
                 AsyncImage(url: URL(string: poi.imageURL ?? "")) { image in
                     image
@@ -32,6 +32,9 @@ struct POIViewRow: View {
                     topTrailingRadius: 20,
                     style: .continuous)
                 )
+                
+                //Badge
+                OpenClosedBadge(isOpen: poi.isOpen)
             }
             
             VStack(alignment: .leading, spacing: 6) {
@@ -92,11 +95,12 @@ struct POIViewRow: View {
         primaryCategoryDisplayName: "America's coldest wonders",
         rating: 3,
         imageURL: nil,
-        loc: []
+        coordinates: [],
+        isOpen: false
     )
     
     VStack {
-        POIViewRow(poi: poi)
+        PoIViewRow(poi: poi)
     }
     .applyViewPaddings(.all)
     .applyBackground()
