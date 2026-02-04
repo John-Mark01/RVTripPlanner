@@ -132,7 +132,6 @@ struct VehicleViewRow: View {
             onDelete: {_ in}
         )
     }
-    .padding(16)
-    .frame(maxWidth: .infinity, maxHeight: .infinity)
-    .background(Color.appBackground)
+    .applyViewPaddings(.all)
+    .applyBackground()
 }

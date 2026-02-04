@@ -144,6 +144,16 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		366DD6192F33DF7A00AA97ED /* Garage */ = {
+			isa = PBXGroup;
+			children = (
+				366DD5EF2F3279C400AA97ED /* GarageScreen.swift */,
+				366DD6072F33CAD700AA97ED /* AddVehicleSheet.swift */,
+				366DD6082F33CAD700AA97ED /* EditVehicleSheet.swift */,
+			);
+			path = Garage;
+			sourceTree = "<group>";
+		};
 		36F71D742F311C25007874F7 = {
 			isa = PBXGroup;
 			children = (
@@ -201,10 +211,8 @@
 			isa = PBXGroup;
 			children = (
 				366DD5ED2F32774300AA97ED /* HomeScreenTabBar.swift */,
-				366DD5EF2F3279C400AA97ED /* GarageScreen.swift */,
-				366DD5F12F3279E900AA97ED /* PlacesScreen.swift */,
-				366DD6072F33CAD700AA97ED /* AddVehicleSheet.swift */,
-				366DD6082F33CAD700AA97ED /* EditVehicleSheet.swift */,
+				366DD6192F33DF7A00AA97ED /* Garage */,
+				366DD61A2F33DF8300AA97ED /* Places */,
 				366DD5FD2F3296A500AA97ED /* Components */,
 			);
 			path = Views;
