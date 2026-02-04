@@ -9,7 +9,11 @@
 import Foundation
 import Alamofire
 
-final class POIService {
+protocol POIService {
+    func getPoIs() async throws -> Result<PoIDTO, HTTPError>
+}
+
+final class POIServiceImpl: POIService {
     let client: HTTPClient
     let urlString: String
     
@@ -18,11 +22,11 @@ final class POIService {
         self.urlString = urlString
     }
     
-    func getPoIs() async throws -> Result<PoIModel, HTTPError> {
+    func getPoIs() async throws -> Result<PoIDTO, HTTPError> {
         return await client.request(
             method: .get,
             url: urlString,
-            of: PoIModel.self
+            of: PoIDTO.self
         )
         .mapError { error in
             switch error {
@@ -32,5 +36,17 @@ final class POIService {
                 return .serverError
             }
         }
+    }
+}
+
+final class MockPoiService: POIService {
+    func getPoIs() async throws -> Result<PoIDTO, HTTPError> {
+        try await Task.sleep(for: .seconds(2))
+//        return .success(.init(pois: [.init(id: 1, name: "Name", url: "fjkaldlskj", primaryCategoryDisplayName: "Country road", rating: nil, imageURL: nil, loc: []), .init(id: 2, name: "Name", url: "fjkaldlskj", primaryCategoryDisplayName: "Country road", rating: nil, imageURL: nil, loc: [])], total: .init(value: 2, relation: "")))
+        return .failure(.serverError)
+    }
+    
+    private func loadStubbedPOI() -> [PoIDTO] {
+        return []
     }
 }

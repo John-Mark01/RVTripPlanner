@@ -13,7 +13,7 @@ struct PoIModel: Codable {
     let name: String
     let url: String
     let primaryCategoryDisplayName: String
-    let rating: Int?
+    let rating: Double?
     let imageURL: String?
     let loc: [Double] // [longitude, latitude]
     
@@ -23,7 +23,7 @@ struct PoIModel: Codable {
         case url
         case primaryCategoryDisplayName = "primary_category_display_name"
         case rating
-        case imageURL = "large_image_url"
+        case imageURL = "v_320x320_url"
         case loc
     }
 }
