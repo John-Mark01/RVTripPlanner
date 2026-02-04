@@ -22,6 +22,10 @@ struct VehicleViewRow: View {
         FuelType(rawValue: vehicle.fuelType) ?? .hybrid
     }
     
+    private var vehicleType: VehicleType {
+        VehicleType(rawValue: vehicle.type) ?? .car
+    }
+    
     var body: some View {
         
         VStack(spacing: 0) {
@@ -33,18 +37,23 @@ struct VehicleViewRow: View {
                         Image(uiImage: image)
                             .resizable()
                     } else {
-                        Image(systemName: "suv.side")
+                        Image(systemName: vehicleType.systemImage)
                             .resizable()
+                            .padding(16)
                     }
                 }
-                .frame(maxHeight: 120)
-                .clipped()
-                .padding(16)
+                .frame(height: 120)
+                .clipShape(UnevenRoundedRectangle(
+                    topLeadingRadius: 20,
+                    bottomLeadingRadius: 0,
+                    bottomTrailingRadius: 0,
+                    topTrailingRadius: 20,
+                    style: .continuous)
+                )
                 
                 // Fuel Badge
                 FuelBadge(fuel: fuelType)
-                    .padding(.vertical, 16)
-                    .padding(.horizontal, 12)
+                    .padding(12)
             }
             
             
@@ -62,7 +71,7 @@ struct VehicleViewRow: View {
                     .lineLimit(1)
                 
                 // Year
-                Text(vehicle.year)
+                Text(vehicle.year.formatToYearString())
                     .font(.system(.subheadline, design: .rounded, weight: .regular))
                     .foregroundColor(.textTertiary)
             }
@@ -97,9 +106,10 @@ struct VehicleViewRow: View {
 
 #Preview {
     let vehicle = Vehicle(
+        type: VehicleType.motorcycle.rawValue,
         make: "Ford",
         model: "Focus 1.6",
-        year: "2003",
+        year: Date(),
         fuelType: FuelType.gas.rawValue
     )
     VStack {

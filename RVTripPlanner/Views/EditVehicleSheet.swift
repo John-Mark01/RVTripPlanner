@@ -1,3 +1,9 @@
+//
+//  Extensions+Data.swift
+//  RVTripPlanner
+//
+//  Created by John-Mark Iliev on 4.02.26.
+//
 
 import SwiftUI
 
@@ -19,10 +25,16 @@ struct EditVehicleSheet: View {
             Section("Basic Information") {
                 
                 //Vehicle Type
-                Picker("Vehicle Type", selection: $vehicleType) {
+                Picker("Vehicle Type", selection: Binding(
+                    get: { VehicleType(rawValue: vehicle.type) ?? .other },
+                    set: { vehicle.fuelType = $0.rawValue })
+                ) {
                     ForEach(VehicleType.allCases, id: \.self) { type in
-                        Label(type.rawValue.capitalized, systemImage: type.systemImage)
-                            .symbolEffect(.bounce, value: vehicleType)
+                        Label(
+                            type.rawValue.capitalized,
+                            systemImage: type.systemImage
+                        )
+                        .symbolEffect(.bounce, value: vehicleType)
                     }
                 }
                 
@@ -115,61 +127,14 @@ struct EditVehicleSheet: View {
 }
 
 #Preview {
-    @Previewable @State var vehicle: Vehicle = .init(make: "Toyota", model: "Camry", year: Date(), fuelType: "diesel")
+    @Previewable @State var vehicle = Vehicle(
+        type: VehicleType.car.rawValue,
+        make: "Toyota",
+        model: "Camry",
+        year: Date(),
+        fuelType: "diesel"
+    )
     NavigationStack {
         EditVehicleSheet(vehicle: vehicle)
-    }
-}
-
-struct CustomTextField: View {
-    @FocusState var isFocused: Bool
-    @Binding var input: String
-    var title: any StringProtocol = ""
-    var prompt: any StringProtocol
-    var keyboardType: UIKeyboardType = .default
-    
-    var body: some View {
-        TextField(title, text: $input, prompt: Text(prompt))
-            .focused($isFocused)
-            .onTapGesture { isFocused = true }
-            .keyboardType(keyboardType)
-    }
-}
-
-struct CustomPhotosPicker: View {
-    @State private var photoStream: PhotosPickerItem?
-    @Binding var vehiclePhotoData: Data?
-    
-    var body: some View {
-        PhotosPicker(selection: $photoStream) {
-            if let imageData = vehiclePhotoData,
-               let uiImage = UIImage(data: imageData) {
-                Image(uiImage: uiImage)
-                    .resizable()
-                    .frame(width: 100, height: 100)
-                    .clipShape(RoundedRectangle(cornerRadius: 12))
-                    .contextMenu {
-                        Button(action: {
-                            self.vehiclePhotoData = nil
-                            self.photoStream = nil
-                        }) {
-                            Label("Remove Photo", systemImage: "trash")
-                        }
-                        .tint(.red)
-                    }
-            } else {
-                Label("", systemImage: "plus")
-            }
-        }
-        .onChange(of: photoStream) {
-            Task {
-                let newValue = try? await photoStream?.loadTransferable(type: Data.self)
-                guard let newValue, !newValue.isEmpty else { return }
-                guard let transformedData = newValue.transformIntoImageData() else { return }
-                
-                self.photoStream = nil
-                vehiclePhotoData = transformedData
-            }
-        }
     }
 }

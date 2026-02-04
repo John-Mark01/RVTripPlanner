@@ -11,7 +11,9 @@ import SwiftData
 struct GarageScreen: View {
     @Environment(\.modelContext) private var modelContext
     @Query private var vehicles: [Vehicle]
+    
     @State private var openSheet: Bool = false
+    @State private var selectedVehicle: Vehicle?
     
     private let columns = [
            GridItem(.adaptive(minimum: 160, maximum: 200), spacing: 16)
@@ -25,7 +27,7 @@ struct GarageScreen: View {
                         ForEach(vehicles) { vehicle in
                             VehicleViewRow(
                                 vehicle: vehicle,
-                                onEdit: { _ in},
+                                onEdit: { selectedVehicle = $0 },
                                 onDelete: { modelContext.delete($0) }
                             )
                         }
@@ -40,15 +42,18 @@ struct GarageScreen: View {
             .toolbar {
                 ToolbarItem(placement: .topBarTrailing) {
                     Button("", systemImage: "plus") {
-                        modelContext.insert(
-                            Vehicle(
-                                make: "Ford",
-                                model: "Focus 1.6",
-                                year: "2003",
-                                fuelType: FuelType.hybrid.rawValue
-                            )
-                        )
+                        openSheet.toggle()
                     }
+                }
+            }
+            .sheet(isPresented: $openSheet) {
+                NavigationStack {
+                    AddVehicleSheet()
+                }
+            }
+            .sheet(item: $selectedVehicle) { vehicle in
+                NavigationStack {
+                    EditVehicleSheet(vehicle: vehicle)
                 }
             }
         }
