@@ -8,6 +8,10 @@
 import SwiftUI
 
 struct HomeScreenTabBar: View {
+    private let poiService: POIService
+    init(poiService: POIService) {
+        self.poiService = poiService
+    }
     
     var body: some View {
         TabView {
@@ -15,7 +19,7 @@ struct HomeScreenTabBar: View {
                 .tabItem {
                     Label("Garage", systemImage: "car.top.door.front.left.open")
                 }
-            PlacesScreen()
+            PlacesScreen(poiService: poiService)
                 .tabItem {
                     Label("Places", systemImage: "mappin.and.ellipse")
                 }
@@ -24,5 +28,7 @@ struct HomeScreenTabBar: View {
 }
 
 #Preview {
-    HomeScreenTabBar()
+    HomeScreenTabBar(
+        poiService: MockPoiService()
+    )
 }
