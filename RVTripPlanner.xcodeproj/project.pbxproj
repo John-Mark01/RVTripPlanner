@@ -33,8 +33,11 @@
 		366DD6162F33D91200AA97ED /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 366DD6152F33D91200AA97ED /* AppConstants.swift */; };
 		366DD6182F33DEA300AA97ED /* Extensions+View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 366DD6172F33DEA300AA97ED /* Extensions+View.swift */; };
 		366DD61C2F33E8B700AA97ED /* PlacesScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 366DD61B2F33E8B700AA97ED /* PlacesScreenViewModel.swift */; };
-		366DD61E2F33EB2700AA97ED /* POIViewRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 366DD61D2F33EB2700AA97ED /* POIViewRow.swift */; };
+		366DD61E2F33EB2700AA97ED /* PoIViewRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 366DD61D2F33EB2700AA97ED /* PoIViewRow.swift */; };
 		366DD6202F33EF4A00AA97ED /* PoIDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 366DD61F2F33EF4A00AA97ED /* PoIDTO.swift */; };
+		366DD64F2F33FABC00AA97ED /* PoIDetailsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 366DD64E2F33FABC00AA97ED /* PoIDetailsScreen.swift */; };
+		366DD6512F34055600AA97ED /* MiniMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 366DD6502F34055600AA97ED /* MiniMapView.swift */; };
+		366DD6532F3409A800AA97ED /* OpenClosedBadge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 366DD6522F3409A800AA97ED /* OpenClosedBadge.swift */; };
 		36F71DAE2F311CBE007874F7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 36F71DA92F311CBE007874F7 /* Assets.xcassets */; };
 		36F71DB12F311CBE007874F7 /* RVTripPlannerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36F71DAC2F311CBE007874F7 /* RVTripPlannerApp.swift */; };
 		36F71DB32F311CD9007874F7 /* Readme.md in Sources */ = {isa = PBXBuildFile; fileRef = 36F71DB22F311CD4007874F7 /* Readme.md */; };
@@ -79,8 +82,11 @@
 		366DD6152F33D91200AA97ED /* AppConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
 		366DD6172F33DEA300AA97ED /* Extensions+View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extensions+View.swift"; sourceTree = "<group>"; };
 		366DD61B2F33E8B700AA97ED /* PlacesScreenViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacesScreenViewModel.swift; sourceTree = "<group>"; };
-		366DD61D2F33EB2700AA97ED /* POIViewRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = POIViewRow.swift; sourceTree = "<group>"; };
+		366DD61D2F33EB2700AA97ED /* PoIViewRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoIViewRow.swift; sourceTree = "<group>"; };
 		366DD61F2F33EF4A00AA97ED /* PoIDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoIDTO.swift; sourceTree = "<group>"; };
+		366DD64E2F33FABC00AA97ED /* PoIDetailsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoIDetailsScreen.swift; sourceTree = "<group>"; };
+		366DD6502F34055600AA97ED /* MiniMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiniMapView.swift; sourceTree = "<group>"; };
+		366DD6522F3409A800AA97ED /* OpenClosedBadge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenClosedBadge.swift; sourceTree = "<group>"; };
 		36F71D7D2F311C25007874F7 /* RVTripPlanner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RVTripPlanner.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		36F71D8C2F311C27007874F7 /* RVTripPlannerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RVTripPlannerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		36F71DA92F311CBE007874F7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -130,12 +136,14 @@
 		366DD5FD2F3296A500AA97ED /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				366DD6502F34055600AA97ED /* MiniMapView.swift */,
 				366DD60D2F33CB5700AA97ED /* CustomPhotosPicker.swift */,
 				366DD60B2F33CB4A00AA97ED /* CustomTextField.swift */,
 				366DD5FE2F329AF600AA97ED /* GarageEmptyStateView.swift */,
 				366DD5F92F32866100AA97ED /* VehicleViewRow.swift */,
 				366DD5FB2F32969500AA97ED /* FuelBadge.swift */,
-				366DD61D2F33EB2700AA97ED /* POIViewRow.swift */,
+				366DD6522F3409A800AA97ED /* OpenClosedBadge.swift */,
+				366DD61D2F33EB2700AA97ED /* PoIViewRow.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -166,6 +174,7 @@
 			children = (
 				366DD61B2F33E8B700AA97ED /* PlacesScreenViewModel.swift */,
 				366DD5F12F3279E900AA97ED /* PlacesScreen.swift */,
+				366DD64E2F33FABC00AA97ED /* PoIDetailsScreen.swift */,
 			);
 			path = Places;
 			sourceTree = "<group>";
@@ -347,6 +356,8 @@
 				36F71DB32F311CD9007874F7 /* Readme.md in Sources */,
 				366DD5E72F326CF800AA97ED /* HTTPClient.swift in Sources */,
 				366DD5FC2F32969500AA97ED /* FuelBadge.swift in Sources */,
+				366DD6512F34055600AA97ED /* MiniMapView.swift in Sources */,
+				366DD64F2F33FABC00AA97ED /* PoIDetailsScreen.swift in Sources */,
 				366DD6102F33CBFC00AA97ED /* FuelType.swift in Sources */,
 				366DD6162F33D91200AA97ED /* AppConstants.swift in Sources */,
 				366DD6092F33CAD700AA97ED /* AddVehicleSheet.swift in Sources */,
@@ -357,6 +368,7 @@
 				366DD61C2F33E8B700AA97ED /* PlacesScreenViewModel.swift in Sources */,
 				366DD6202F33EF4A00AA97ED /* PoIDTO.swift in Sources */,
 				366DD6142F33D85D00AA97ED /* ViewModifiers.swift in Sources */,
+				366DD6532F3409A800AA97ED /* OpenClosedBadge.swift in Sources */,
 				366DD5E82F326CF800AA97ED /* HTTPError.swift in Sources */,
 				366DD6042F33CA8700AA97ED /* Extensions+Data.swift in Sources */,
 				366DD5F02F3279C400AA97ED /* GarageScreen.swift in Sources */,
@@ -365,7 +377,7 @@
 				366DD6062F33CAAF00AA97ED /* Extensions+Date.swift in Sources */,
 				366DD60E2F33CB5700AA97ED /* CustomPhotosPicker.swift in Sources */,
 				366DD5FA2F32866100AA97ED /* VehicleViewRow.swift in Sources */,
-				366DD61E2F33EB2700AA97ED /* POIViewRow.swift in Sources */,
+				366DD61E2F33EB2700AA97ED /* PoIViewRow.swift in Sources */,
 				366DD5EE2F32774300AA97ED /* HomeScreenTabBar.swift in Sources */,
 				36F71DB12F311CBE007874F7 /* RVTripPlannerApp.swift in Sources */,
 				366DD5F42F3280E300AA97ED /* Vehicle.swift in Sources */,
