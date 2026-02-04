@@ -16,14 +16,14 @@ struct GarageScreen: View {
     @State private var selectedVehicle: Vehicle?
     
     private let columns = [
-           GridItem(.adaptive(minimum: 160, maximum: 200), spacing: 16)
+        GridItem(.adaptive(minimum: 160, maximum: 200), spacing: AppConstants.vstackSpacing)
        ]
     
     var body: some View {
         NavigationStack {
             GarageEmptyStateView(condition: vehicles.isEmpty) {
                 ScrollView {
-                    LazyVGrid(columns: columns, spacing: 16) {
+                    LazyVGrid(columns: columns, spacing: AppConstants.vstackSpacing) {
                         ForEach(vehicles) { vehicle in
                             VehicleViewRow(
                                 vehicle: vehicle,
@@ -34,16 +34,17 @@ struct GarageScreen: View {
                     }
                 }
             }
-            .padding(16)
+            .applyViewPaddings(.all)
+            .applyBackground()
             .animation(.bouncy, value: vehicles)
             .navigationTitle("Garage")
-            .background(Color.appBackground)
-            .frame(maxWidth: .infinity, maxHeight: .infinity)
             .toolbar {
                 ToolbarItem(placement: .topBarTrailing) {
-                    Button("", systemImage: "plus") {
-                        openSheet.toggle()
-                    }
+                    Image(systemName: "plus")
+                        .renderAsButton(
+                            action: { openSheet.toggle() },
+                            addHaptic: true
+                        )
                 }
             }
             .sheet(isPresented: $openSheet) {

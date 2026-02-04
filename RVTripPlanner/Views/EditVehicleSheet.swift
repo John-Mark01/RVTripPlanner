@@ -72,7 +72,7 @@ struct EditVehicleSheet: View {
                             .tint(type.fuelColor)
                     }
                 }
-
+                
                 //Nickname
                 CustomTextField(
                     isFocused: _nicknameIsFocused,
@@ -82,7 +82,7 @@ struct EditVehicleSheet: View {
                     ),
                     prompt: "Enter vehicle nickname"
                 )
-
+                
                 //Photos Picker
                 HStack(alignment: .top) {
                     Label("Vehicle's picture", systemImage: "camera")
@@ -94,26 +94,22 @@ struct EditVehicleSheet: View {
                 
             }
         }
+        .applyBackground()
         .animation(.smooth, value: vehicle)
-        .padding(.vertical)
         .onSubmit { moveToNextField() }
         .scrollBounceBehavior(.basedOnSize)
-        .background(.ultraThickMaterial)
         .toolbar {
             ToolbarItemGroup(placement: .topBarLeading) {
-                Button {
-                    dismiss()
-                } label: {
-                    Image(systemName: "xmark")
-                }
+                Image(systemName: "xmark")
+                    .renderAsButton(action: { dismiss() })
             }
             ToolbarItemGroup(placement: .topBarTrailing) {
-                Button {
-                    dismiss()
-                } label: {
-                    Image(systemName: "checkmark")
-                }
-                .buttonStyle(.borderedProminent)
+                Image(systemName: "checkmark")
+                    .renderAsButton(
+                        action: { dismiss() },
+                        addHaptic: true
+                    )
+                    .buttonStyle(.borderedProminent)
             }
         }
     }
@@ -123,7 +119,6 @@ struct EditVehicleSheet: View {
             modelIsFocused = true
         }
     }
-    
 }
 
 #Preview {

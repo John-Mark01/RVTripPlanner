@@ -70,7 +70,7 @@ struct AddVehicleSheet: View {
                     }
                 }
                 .tint(vehicleFuelType.fuelColor)
-
+                
                 //Nickname
                 CustomTextField(
                     isFocused: _nicknameIsFocused,
@@ -91,11 +91,10 @@ struct AddVehicleSheet: View {
                 
             }
         }
-        .animation(.smooth, value: vehiclePhotoData)
-        .padding(.vertical)
+        .applyBackground()
         .onSubmit { moveToNextField() }
+        .animation(.smooth, value: vehiclePhotoData)
         .scrollBounceBehavior(.basedOnSize)
-        .background(.ultraThickMaterial)
         .toolbar {
             ToolbarItemGroup(placement: .topBarLeading) {
                 Button("Cancel") {

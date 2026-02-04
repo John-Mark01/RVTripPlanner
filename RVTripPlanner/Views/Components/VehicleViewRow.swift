@@ -60,19 +60,38 @@ struct VehicleViewRow: View {
             VStack(alignment: .leading, spacing: 6) {
                 // Make
                 Text(vehicle.make)
-                    .font(.system(.title3, design: .rounded, weight: .bold))
+                    .applyFont(.title)
+                    .applyTextConfiguration(
+                        .multiline(
+                            alignment: .leading,
+                            lines: 1
+                        ),
+                        descrLabel: "Vehicle's make"
+                    )
                     .foregroundColor(.textSecondary)
-                    .lineLimit(1)
                 
                 // Model
                 Text(vehicle.model)
-                    .font(.system(.headline, design: .rounded, weight: .semibold))
+                    .applyFont(.headline)
+                    .applyTextConfiguration(
+                        .multiline(
+                            alignment: .leading,
+                            lines: 1
+                        ),
+                        descrLabel: "Vehicle's brand model"
+                    )
                     .foregroundColor(.textPrimary)
-                    .lineLimit(1)
                 
                 // Year
                 Text(vehicle.year.formatToYearString())
-                    .font(.system(.subheadline, design: .rounded, weight: .regular))
+                    .applyFont(.subheadline)
+                    .applyTextConfiguration(
+                        .multiline(
+                            alignment: .leading,
+                            lines: 1
+                        ),
+                        descrLabel: "Vehicle's production date"
+                    )
                     .foregroundColor(.textTertiary)
             }
             .frame(maxWidth: .infinity, alignment: .leading)
@@ -87,19 +106,13 @@ struct VehicleViewRow: View {
         .contextMenu {
             
             //Edit
-            Button(action: {
-                onEdit(vehicle)
-            }) {
-                Label("Edit", systemImage: "pencil")
-            }
+            Label("Edit", systemImage: "pencil")
+                .renderAsButton(action: { onEdit(vehicle) })
             
             //Delete
-            Button(action: {
-                onDelete(vehicle)
-            }) {
-                Label("Delete", systemImage: "trash")
-                    .tint(Color.red)
-            }
+            Label("Delete", systemImage: "trash")
+                .tint(Color.red)
+                .renderAsButton(action: { onDelete(vehicle) }, addHaptic: true)
         }
     }
 }

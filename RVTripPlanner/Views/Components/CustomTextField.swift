@@ -19,5 +19,6 @@ struct CustomTextField: View {
             .focused($isFocused)
             .onTapGesture { isFocused = true }
             .keyboardType(keyboardType)
+            .autocorrectionDisabled()
     }
 }

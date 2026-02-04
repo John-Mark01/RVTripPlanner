@@ -16,8 +16,14 @@ struct FuelBadge: View {
                 .font(.system(size: 10, weight: .semibold))
             
             Text(fuel.rawValue.uppercased())
-                .font(.system(.caption2, design: .rounded, weight: .bold))
-                .lineLimit(1)
+                .applyFont(.body)
+                .applyTextConfiguration(
+                    .multiline(
+                        alignment: .leading,
+                        lines: 1
+                    ),
+                    descrLabel: "Vehicle's fuel type"
+                )
         }
         .foregroundStyle(Color.textPrimary)
         .padding(.horizontal, 8)

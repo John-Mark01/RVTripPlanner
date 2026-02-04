@@ -29,6 +29,9 @@
 		366DD60E2F33CB5700AA97ED /* CustomPhotosPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 366DD60D2F33CB5700AA97ED /* CustomPhotosPicker.swift */; };
 		366DD6102F33CBFC00AA97ED /* FuelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 366DD60F2F33CBFC00AA97ED /* FuelType.swift */; };
 		366DD6122F33CC0C00AA97ED /* VehicleType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 366DD6112F33CC0C00AA97ED /* VehicleType.swift */; };
+		366DD6142F33D85D00AA97ED /* ViewModifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 366DD6132F33D85D00AA97ED /* ViewModifiers.swift */; };
+		366DD6162F33D91200AA97ED /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 366DD6152F33D91200AA97ED /* AppConstants.swift */; };
+		366DD6182F33DEA300AA97ED /* Extensions+View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 366DD6172F33DEA300AA97ED /* Extensions+View.swift */; };
 		36F71DAE2F311CBE007874F7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 36F71DA92F311CBE007874F7 /* Assets.xcassets */; };
 		36F71DB12F311CBE007874F7 /* RVTripPlannerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36F71DAC2F311CBE007874F7 /* RVTripPlannerApp.swift */; };
 		36F71DB32F311CD9007874F7 /* Readme.md in Sources */ = {isa = PBXBuildFile; fileRef = 36F71DB22F311CD4007874F7 /* Readme.md */; };
@@ -69,6 +72,9 @@
 		366DD60D2F33CB5700AA97ED /* CustomPhotosPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPhotosPicker.swift; sourceTree = "<group>"; };
 		366DD60F2F33CBFC00AA97ED /* FuelType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FuelType.swift; sourceTree = "<group>"; };
 		366DD6112F33CC0C00AA97ED /* VehicleType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleType.swift; sourceTree = "<group>"; };
+		366DD6132F33D85D00AA97ED /* ViewModifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModifiers.swift; sourceTree = "<group>"; };
+		366DD6152F33D91200AA97ED /* AppConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
+		366DD6172F33DEA300AA97ED /* Extensions+View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extensions+View.swift"; sourceTree = "<group>"; };
 		36F71D7D2F311C25007874F7 /* RVTripPlanner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RVTripPlanner.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		36F71D8C2F311C27007874F7 /* RVTripPlannerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RVTripPlannerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		36F71DA92F311CBE007874F7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -130,8 +136,10 @@
 		366DD6022F33CA7D00AA97ED /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				366DD6132F33D85D00AA97ED /* ViewModifiers.swift */,
 				366DD6052F33CAAF00AA97ED /* Extensions+Date.swift */,
 				366DD6032F33CA8700AA97ED /* Extensions+Data.swift */,
+				366DD6172F33DEA300AA97ED /* Extensions+View.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -173,6 +181,7 @@
 			isa = PBXGroup;
 			children = (
 				36F71DA92F311CBE007874F7 /* Assets.xcassets */,
+				366DD6152F33D91200AA97ED /* AppConstants.swift */,
 			);
 			path = "Supporting Files";
 			sourceTree = "<group>";
@@ -314,11 +323,13 @@
 				366DD5E72F326CF800AA97ED /* HTTPClient.swift in Sources */,
 				366DD5FC2F32969500AA97ED /* FuelBadge.swift in Sources */,
 				366DD6102F33CBFC00AA97ED /* FuelType.swift in Sources */,
+				366DD6162F33D91200AA97ED /* AppConstants.swift in Sources */,
 				366DD6092F33CAD700AA97ED /* AddVehicleSheet.swift in Sources */,
 				366DD6122F33CC0C00AA97ED /* VehicleType.swift in Sources */,
 				366DD60A2F33CAD700AA97ED /* EditVehicleSheet.swift in Sources */,
 				366DD60C2F33CB4A00AA97ED /* CustomTextField.swift in Sources */,
 				366DD5FF2F329AF600AA97ED /* GarageEmptyStateView.swift in Sources */,
+				366DD6142F33D85D00AA97ED /* ViewModifiers.swift in Sources */,
 				366DD5E82F326CF800AA97ED /* HTTPError.swift in Sources */,
 				366DD6042F33CA8700AA97ED /* Extensions+Data.swift in Sources */,
 				366DD5F02F3279C400AA97ED /* GarageScreen.swift in Sources */,
@@ -330,6 +341,7 @@
 				366DD5EE2F32774300AA97ED /* HomeScreenTabBar.swift in Sources */,
 				36F71DB12F311CBE007874F7 /* RVTripPlannerApp.swift in Sources */,
 				366DD5F42F3280E300AA97ED /* Vehicle.swift in Sources */,
+				366DD6182F33DEA300AA97ED /* Extensions+View.swift in Sources */,
 				366DD5F22F3279E900AA97ED /* PlacesScreen.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
