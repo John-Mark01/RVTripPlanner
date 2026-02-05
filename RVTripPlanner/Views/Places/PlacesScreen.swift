@@ -6,9 +6,12 @@
 //
 
 import SwiftUI
+import SwiftData
 
 struct PlacesScreen: View {
     @Environment(\.modelContext) private var modelContext
+    @Query private var favourites: [FavouritePoI]
+    
     @State private var viewModel: PlacesScreenViewModel
     @State private var selectedPOI: PoIModel?
     
@@ -17,43 +20,57 @@ struct PlacesScreen: View {
     }
     
     var body: some View {
-        NavigationStack {
-            VStack(spacing: 0) {
-                //Segments
-                Picker("", selection: $viewModel.selectedTab) {
-                    ForEach(PlacesTabs.allCases, id: \.self) { tab in
-                        Text(tab.rawValue.capitalized)
-                    }
+        VStack(spacing: 0) {
+            //Segments
+            Picker("", selection: $viewModel.selectedTab) {
+                ForEach(PlacesTabs.allCases, id: \.self) { tab in
+                    Text(tab.rawValue.capitalized)
                 }
-                .pickerStyle(.segmented)
-                .applyViewPaddings(.all)
-                
-                switch viewModel.selectedTab {
-                case .list:
-                    List {
-                        Section {
-                            ForEach(viewModel.pois, id: \.id) { poi in
-                                PoIViewRow(poi: poi)
-                                    .onTapGesture { selectedPOI = poi }
-                            }
-                        } header: {
-                            Text("New")
-                                .font(.title)
-                                .fontWeight(.heavy)
-                                .foregroundStyle(.textPrimary)
+            }
+            .pickerStyle(.segmented)
+            .applyViewPaddings(.all)
+            
+            switch viewModel.selectedTab {
+            case .list:
+                List {
+                    Section {
+                        ForEach(favourites, id: \.id) { poi in
+                            Text(poi.name)
                         }
+                    } header: {
+                        Text("Favourites")
+                            .font(.title)
+                            .fontWeight(.heavy)
+                            .foregroundStyle(.textPrimary)
                     }
-                    .listRowSeparator(.hidden)
-                    .listRowSpacing(AppConstants.vstackSpacing / 2)
-                    .applyBackground()
                     
-                case .map:
-                    EmptyView()
+                    Section {
+                        ForEach(viewModel.pois, id: \.id) { poi in
+                            PoIViewRow(poi: poi)
+                                .overlay(alignment: .topTrailing) {
+                                    if favourites.contains(where: { $0.id == poi.id }) {
+                                        Image(systemName: "star.fill")
+                                    }
+                                }
+                                .onTapGesture { selectedPOI = poi }
+                        }
+                    } header: {
+                        Text("New")
+                            .font(.title)
+                            .fontWeight(.heavy)
+                            .foregroundStyle(.textPrimary)
+                    }
                 }
+                .listRowSeparator(.hidden)
+                .listRowSpacing(AppConstants.vstackSpacing / 2)
+                .applyBackground()
+                
+            case .map:
+                EmptyView()
             }
-            .navigationDestination(item: $selectedPOI) { poi in
-                PoIDetailsScreen(poi: poi, onSave: {_ in})
-            }
+        }
+        .navigationDestination(item: $selectedPOI) { poi in
+            PoIDetailsScreen(poi: poi, onSave: {_ in})
         }
         .navigationTitle("Places")
         .task { await viewModel.fetchPOIs() }
@@ -80,4 +97,5 @@ enum PlacesTabs: String, CaseIterable {
             poiService: MockPoiService()
         )
     }
+    .modelContainer(for: FavouritePoI.self, inMemory: true)
 }

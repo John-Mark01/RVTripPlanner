@@ -15,14 +15,18 @@ struct HomeScreenTabBar: View {
     
     var body: some View {
         TabView {
-            GarageScreen()
-                .tabItem {
-                    Label("Garage", systemImage: "car.top.door.front.left.open")
-                }
-            PlacesScreen(poiService: poiService)
-                .tabItem {
-                    Label("Places", systemImage: "mappin.and.ellipse")
-                }
+            NavigationStack {
+                GarageScreen()
+            }
+            .tabItem {
+                Label("Garage", systemImage: "car.top.door.front.left.open")
+            }
+            NavigationStack {
+                PlacesScreen(poiService: poiService)
+            }
+            .tabItem {
+                Label("Places", systemImage: "mappin.and.ellipse")
+            }
         }
     }
 }

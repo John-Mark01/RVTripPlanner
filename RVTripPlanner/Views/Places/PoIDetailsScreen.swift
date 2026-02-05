@@ -6,8 +6,10 @@
 //
 
 import SwiftUI
+import SwiftData
 
 struct PoIDetailsScreen: View {
+    @Environment(\.modelContext) private var modelContext
     @State private var isSaved: Bool = false
     
     let poi: PoIModel
@@ -72,11 +74,30 @@ struct PoIDetailsScreen: View {
         .applyViewPaddings(.all)
         .applyBackground()
         .navigationTitle(poi.name)
+        .onChange(of: isSaved) { _, newValue in
+            let model = createFavoutirePoI()
+            if newValue {
+                modelContext.insert(model)
+            } else {
+                modelContext.delete(model)
+            }
+        }
         .toolbar {
             ToolbarItem(placement: .topBarTrailing) {
                 OpenClosedBadge(isOpen: poi.isOpen)
             }
         }
+    }
+    
+    private func createFavoutirePoI() -> FavouritePoI {
+        return FavouritePoI(
+            id: poi.id,
+            name: poi.name,
+            url: poi.url,
+            primaryCategoryDisplayName: poi.primaryCategoryDisplayName,
+            rating: poi.rating,
+            imageURL: poi.imageURL,
+        )
     }
 }
 
@@ -97,4 +118,5 @@ struct PoIDetailsScreen: View {
             onSave: {_ in}
         )
     }
+    .modelContainer(for: FavouritePoI.self, inMemory: true)
 }
