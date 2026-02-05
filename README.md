@@ -68,11 +68,13 @@ final class FavouritePoI: Identifiable {
 * local persistance (SwiftData - VehicleModel)
 * Box-Type VGrid of vehicles with photo, nickname, make/model/year.
 * Add/Edit vehicle sheet with validation.
+* Edit/Delete actions hidden with `ContextMenu` (hold to popup)
                     
 #### Places
 * Segmented control for List | Map [not completed].
 * Large list of recieved PoI (Points of Interest) models
 * Favorites subsection within list
+  - deleting a favourite PoI simply slide-to-delete.
 * API Calls (Alamofire) + Saving (favourites - `FavouritePoI`) (SwiftData)
 * Detail screen:
     - mini map
@@ -95,6 +97,8 @@ some of them are:
     - Form
     - Section
     - Assets
+    - ContextMenu
+    - Haptics
 And overal architural thinking not only in services and networking, but also in UI.
 
 ### What's next
