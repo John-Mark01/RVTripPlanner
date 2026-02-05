@@ -75,10 +75,11 @@ struct PlacesScreen: View {
                             .foregroundStyle(.textPrimary)
                     }
                 }
+                .listStyle(.plain)
                 .listSectionSpacing(AppConstants.vstackSpacing * 2)
-                .listRowSeparator(.hidden)
                 .listRowSpacing(AppConstants.vstackSpacing / 2)
-                .applyBackground()
+                .listRowSeparator(.hidden)
+                .scrollContentBackground(.hidden)
                 
             case .map:
                 EmptyView()
@@ -86,19 +87,20 @@ struct PlacesScreen: View {
                 Spacer()
             }
         }
-        .navigationDestination(item: $viewModel.selectedPOI) { poi in
-            let isSaved = favourites.contains(where: { $0.id == poi.id })
-            PoIDetailsScreen(poi: poi, isSaved: isSaved)
-        }
-        .navigationTitle("Places")
-        .task { await viewModel.fetchPOIs() }
-        .toolbarBackground(.hidden, for: .navigationBar)
+        .applyBackground()
         .applyLoadingDialog(when: viewModel.isLoadingState)
         .applyAlertHandling(
             isPresented: $viewModel.showAlert,
             title: viewModel.alertTitle,
             message: viewModel.alertMessage
         )
+        .toolbarBackground(.hidden, for: .navigationBar)
+        .navigationTitle("Places")
+        .navigationDestination(item: $viewModel.selectedPOI) { poi in
+            let isSaved = favourites.contains(where: { $0.id == poi.id })
+            PoIDetailsScreen(poi: poi, isSaved: isSaved)
+        }
+        .task { await viewModel.fetchPOIs() }
     }
     
     private func deleteFavouritePOI(at indexSet: IndexSet) {
