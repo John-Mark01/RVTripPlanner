@@ -42,6 +42,7 @@
 		366DD6572F341D3100AA97ED /* MockPoiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 366DD6562F341D3100AA97ED /* MockPoiService.swift */; };
 		366DD65C2F341F5A00AA97ED /* PoIRatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 366DD65B2F341F5A00AA97ED /* PoIRatingView.swift */; };
 		366DD65E2F3420A000AA97ED /* RatingStarsRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 366DD65D2F3420A000AA97ED /* RatingStarsRow.swift */; };
+		366DD6602F350D4500AA97ED /* RVTripPlanner.icon in Resources */ = {isa = PBXBuildFile; fileRef = 366DD65F2F350D4500AA97ED /* RVTripPlanner.icon */; };
 		36F71DAE2F311CBE007874F7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 36F71DA92F311CBE007874F7 /* Assets.xcassets */; };
 		36F71DB12F311CBE007874F7 /* RVTripPlannerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36F71DAC2F311CBE007874F7 /* RVTripPlannerApp.swift */; };
 		36F71DB92F3122A0007874F7 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 36F71DB82F3122A0007874F7 /* Alamofire */; };
@@ -94,6 +95,7 @@
 		366DD6562F341D3100AA97ED /* MockPoiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockPoiService.swift; sourceTree = "<group>"; };
 		366DD65B2F341F5A00AA97ED /* PoIRatingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoIRatingView.swift; sourceTree = "<group>"; };
 		366DD65D2F3420A000AA97ED /* RatingStarsRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingStarsRow.swift; sourceTree = "<group>"; };
+		366DD65F2F350D4500AA97ED /* RVTripPlanner.icon */ = {isa = PBXFileReference; lastKnownFileType = folder.iconcomposer.icon; path = RVTripPlanner.icon; sourceTree = "<group>"; };
 		36F71D7D2F311C25007874F7 /* RVTripPlanner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RVTripPlanner.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		36F71D8C2F311C27007874F7 /* RVTripPlannerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RVTripPlannerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		36F71DA92F311CBE007874F7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -253,6 +255,7 @@
 			children = (
 				36F71DA92F311CBE007874F7 /* Assets.xcassets */,
 				366DD6152F33D91200AA97ED /* AppConstants.swift */,
+				366DD65F2F350D4500AA97ED /* RVTripPlanner.icon */,
 			);
 			path = "Supporting Files";
 			sourceTree = "<group>";
@@ -367,6 +370,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				366DD6602F350D4500AA97ED /* RVTripPlanner.icon in Resources */,
 				36F71DAE2F311CBE007874F7 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -566,13 +570,15 @@
 		36F71DA12F311C27007874F7 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = RVTripPlanner;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "RVTripPlanner/Supporting\\ Files/RVTripPlanner.icon";
 				DEVELOPMENT_TEAM = S6ZFW3NA3K;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.travel";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -603,13 +609,15 @@
 		36F71DA22F311C27007874F7 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = RVTripPlanner;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "RVTripPlanner/Supporting\\ Files/RVTripPlanner.icon";
 				DEVELOPMENT_TEAM = S6ZFW3NA3K;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.travel";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
