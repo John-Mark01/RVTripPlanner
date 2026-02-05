@@ -10,10 +10,9 @@ import SwiftData
 
 struct PoIDetailsScreen: View {
     @Environment(\.modelContext) private var modelContext
-    @State private var isSaved: Bool = false
     
     let poi: PoIModel
-    var onSave: (PoIModel) -> Void
+    @State var isSaved: Bool
     
     var body: some View {
         VStack(alignment: .center, spacing: AppConstants.vstackSpacing) {
@@ -89,6 +88,15 @@ struct PoIDetailsScreen: View {
         }
     }
     
+    private func toggleAction(_ isTurningOn: Bool) {
+        let model = createFavoutirePoI()
+        if isTurningOn {
+            modelContext.insert(model)
+        } else {
+            modelContext.delete(model)
+        }
+    }
+    
     private func createFavoutirePoI() -> FavouritePoI {
         return FavouritePoI(
             id: poi.id,
@@ -115,7 +123,7 @@ struct PoIDetailsScreen: View {
     NavigationStack {
         PoIDetailsScreen(
             poi: poi,
-            onSave: {_ in}
+            isSaved: true
         )
     }
     .modelContainer(for: FavouritePoI.self, inMemory: true)

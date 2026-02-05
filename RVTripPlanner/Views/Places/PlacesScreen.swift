@@ -34,22 +34,14 @@ struct PlacesScreen: View {
             case .list:
                 List {
                     Section {
-                        ForEach(favourites, id: \.id) { poi in
-                            Text(poi.name)
-                        }
-                    } header: {
-                        Text("Favourites")
-                            .font(.title)
-                            .fontWeight(.heavy)
-                            .foregroundStyle(.textPrimary)
-                    }
-                    
-                    Section {
                         ForEach(viewModel.pois, id: \.id) { poi in
                             PoIViewRow(poi: poi)
-                                .overlay(alignment: .topTrailing) {
+                                .overlay(alignment: .topLeading) {
                                     if favourites.contains(where: { $0.id == poi.id }) {
-                                        Image(systemName: "star.fill")
+                                        Image(systemName: "star.circle")
+                                            .font(.largeTitle)
+                                            .foregroundStyle(.yellow)
+                                            .padding(10)
                                     }
                                 }
                                 .onTapGesture { selectedPOI = poi }
@@ -67,10 +59,13 @@ struct PlacesScreen: View {
                 
             case .map:
                 EmptyView()
+                
+                Spacer()
             }
         }
         .navigationDestination(item: $selectedPOI) { poi in
-            PoIDetailsScreen(poi: poi, onSave: {_ in})
+            let isSaved = favourites.contains(where: { $0.id == poi.id })
+            PoIDetailsScreen(poi: poi, isSaved: isSaved)
         }
         .navigationTitle("Places")
         .task { await viewModel.fetchPOIs() }
