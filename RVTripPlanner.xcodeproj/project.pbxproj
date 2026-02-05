@@ -44,7 +44,6 @@
 		366DD65E2F3420A000AA97ED /* RatingStarsRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 366DD65D2F3420A000AA97ED /* RatingStarsRow.swift */; };
 		36F71DAE2F311CBE007874F7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 36F71DA92F311CBE007874F7 /* Assets.xcassets */; };
 		36F71DB12F311CBE007874F7 /* RVTripPlannerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36F71DAC2F311CBE007874F7 /* RVTripPlannerApp.swift */; };
-		36F71DB32F311CD9007874F7 /* Readme.md in Sources */ = {isa = PBXBuildFile; fileRef = 36F71DB22F311CD4007874F7 /* Readme.md */; };
 		36F71DB92F3122A0007874F7 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 36F71DB82F3122A0007874F7 /* Alamofire */; };
 /* End PBXBuildFile section */
 
@@ -99,7 +98,6 @@
 		36F71D8C2F311C27007874F7 /* RVTripPlannerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RVTripPlannerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		36F71DA92F311CBE007874F7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		36F71DAC2F311CBE007874F7 /* RVTripPlannerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RVTripPlannerApp.swift; sourceTree = "<group>"; };
-		36F71DB22F311CD4007874F7 /* Readme.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = Readme.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -240,7 +238,6 @@
 		36F71DAD2F311CBE007874F7 /* RVTripPlanner */ = {
 			isa = PBXGroup;
 			children = (
-				36F71DB22F311CD4007874F7 /* Readme.md */,
 				36F71DAC2F311CBE007874F7 /* RVTripPlannerApp.swift */,
 				36F71DB52F3121E2007874F7 /* Models */,
 				36F71DB62F3121EC007874F7 /* Views */,
@@ -389,7 +386,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				36F71DB32F311CD9007874F7 /* Readme.md in Sources */,
 				366DD5E72F326CF800AA97ED /* HTTPClient.swift in Sources */,
 				366DD5FC2F32969500AA97ED /* FuelBadge.swift in Sources */,
 				366DD6512F34055600AA97ED /* MiniMapView.swift in Sources */,

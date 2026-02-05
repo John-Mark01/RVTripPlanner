@@ -17,7 +17,7 @@ final class POIServiceImpl: POIService {
     let client: HTTPClient
     let urlString: String
     
-    init(httpClient: HTTPClient = .init(), urlString: String) {
+    init(httpClient: HTTPClient, urlString: String) {
         self.client = httpClient
         self.urlString = urlString
     }

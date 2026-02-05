@@ -10,7 +10,10 @@ import SwiftData
 
 @main
 struct RVTripPlannerApp: App {
-    private let poiService = POIServiceImpl(urlString: AppConstants.httpClientURL)
+    private let poiService = POIServiceImpl(
+        httpClient: HTTPClientImpl(),
+        urlString: AppConstants.httpClientURL
+    )
     
     var body: some Scene {
         WindowGroup {

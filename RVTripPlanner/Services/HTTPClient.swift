@@ -9,7 +9,12 @@
 import Foundation
 import Alamofire
 
-actor HTTPClient {
+
+protocol HTTPClient {
+    func request<T: Decodable & Sendable>(method: HTTPMethod, url: String, of: T.Type) async -> Result<T, AFError>
+}
+
+actor HTTPClientImpl: HTTPClient {
     func request<T: Decodable>(
         method: HTTPMethod,
         url: String,
