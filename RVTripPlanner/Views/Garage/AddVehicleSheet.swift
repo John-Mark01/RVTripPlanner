@@ -22,9 +22,14 @@ struct AddVehicleSheet: View {
     @State private var vehicleMake: String = ""
     @State private var vehicleModel: String = ""
     @State private var vehicleNickname: String = ""
-    @State private var vehicleYear: Date = Date(timeIntervalSince1970: 918131995)
+    @State private var vehicleYear: Date = Date().baseCarProductionyear()
     @State private var vehicleFuelType: FuelType = .gas
     @State private var vehiclePhotoData: Data?
+    
+    //Validation alerts
+    @State private var showAlert: Bool = false
+    @State private var alertTitle: String = ""
+    @State private var alertMessage: String = ""
     
     var body: some View {
         Form {
@@ -92,6 +97,11 @@ struct AddVehicleSheet: View {
             }
         }
         .applyBackground()
+        .applyAlertHandling(
+            isPresented: $showAlert,
+            title: alertTitle,
+            message: alertMessage
+        )
         .onSubmit { moveToNextField() }
         .animation(.smooth, value: vehiclePhotoData)
         .scrollBounceBehavior(.basedOnSize)
@@ -103,9 +113,11 @@ struct AddVehicleSheet: View {
             }
             ToolbarItemGroup(placement: .topBarTrailing) {
                 Button("Save") {
-                    let vehicle = createVehicle()
-                    modelContext.insert(vehicle)
-                    dismiss()
+                    if validateFields() {
+                        let vehicle = createVehicle()
+                        modelContext.insert(vehicle)
+                        dismiss()
+                    }
                 }
                 .buttonStyle(.borderedProminent)
             }
@@ -130,6 +142,30 @@ struct AddVehicleSheet: View {
         )
     }
     
+    private func validateFields() -> Bool{
+        let vehicle = createVehicle()
+        
+        if vehicle.make.isEmpty {
+            presentAlert(saying: "Vehicle's make is required")
+            makeIsFocused = true
+            return false
+        } else if vehicle.model.isEmpty {
+            modelIsFocused = true
+            presentAlert(saying: "Vehicle's model is required")
+            return false
+        } else if vehicle.year == Date().baseCarProductionyear() {
+            presentAlert(saying: "Vehicle's year is required")
+            return false
+        }
+        
+        return true
+    }
+    
+    private func presentAlert(saying message: String) {
+        self.showAlert = true
+        self.alertTitle = "Warning"
+        self.alertMessage = message
+    }
 }
 
 #Preview {

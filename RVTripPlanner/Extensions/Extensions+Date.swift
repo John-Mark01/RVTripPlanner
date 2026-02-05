@@ -14,4 +14,8 @@ extension Date {
         
         return formatter.string(from: self)
     }
+    
+    func baseCarProductionyear() -> Date {
+        return Date(timeIntervalSince1970: 0)
+    }
 }
