@@ -17,45 +17,43 @@ struct GarageScreen: View {
     
     private let columns = [
         GridItem(.adaptive(minimum: 160, maximum: 200), spacing: AppConstants.vstackSpacing)
-       ]
+    ]
     
     var body: some View {
-        NavigationStack {
-            GarageEmptyStateView(condition: vehicles.isEmpty) {
-                ScrollView {
-                    LazyVGrid(columns: columns, spacing: AppConstants.vstackSpacing) {
-                        ForEach(vehicles) { vehicle in
-                            VehicleViewRow(
-                                vehicle: vehicle,
-                                onEdit: { selectedVehicle = $0 },
-                                onDelete: { modelContext.delete($0) }
-                            )
-                        }
+        GarageEmptyStateView(condition: vehicles.isEmpty) {
+            ScrollView {
+                LazyVGrid(columns: columns, spacing: AppConstants.vstackSpacing) {
+                    ForEach(vehicles) { vehicle in
+                        VehicleViewRow(
+                            vehicle: vehicle,
+                            onEdit: { selectedVehicle = $0 },
+                            onDelete: { modelContext.delete($0) }
+                        )
                     }
                 }
             }
-            .applyViewPaddings(.all)
-            .applyBackground()
-            .animation(.bouncy, value: vehicles)
-            .navigationTitle("Garage")
-            .toolbar {
-                ToolbarItem(placement: .topBarTrailing) {
-                    Image(systemName: "plus")
-                        .renderAsButton(
-                            action: { openSheet.toggle() },
-                            addHaptic: true
-                        )
-                }
+        }
+        .applyViewPaddings(.all)
+        .applyBackground()
+        .animation(.bouncy, value: vehicles)
+        .navigationTitle("Garage")
+        .toolbar {
+            ToolbarItem(placement: .topBarTrailing) {
+                Image(systemName: "plus")
+                    .renderAsButton(
+                        action: { openSheet.toggle() },
+                        addHaptic: true
+                    )
             }
-            .sheet(isPresented: $openSheet) {
-                NavigationStack {
-                    AddVehicleSheet()
-                }
+        }
+        .sheet(isPresented: $openSheet) {
+            NavigationStack {
+                AddVehicleSheet()
             }
-            .sheet(item: $selectedVehicle) { vehicle in
-                NavigationStack {
-                    EditVehicleSheet(vehicle: vehicle)
-                }
+        }
+        .sheet(item: $selectedVehicle) { vehicle in
+            NavigationStack {
+                EditVehicleSheet(vehicle: vehicle)
             }
         }
     }

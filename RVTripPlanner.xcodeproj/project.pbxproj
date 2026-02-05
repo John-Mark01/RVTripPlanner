@@ -39,6 +39,7 @@
 		366DD6512F34055600AA97ED /* MiniMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 366DD6502F34055600AA97ED /* MiniMapView.swift */; };
 		366DD6532F3409A800AA97ED /* OpenClosedBadge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 366DD6522F3409A800AA97ED /* OpenClosedBadge.swift */; };
 		366DD6552F340B5400AA97ED /* FavouritePoI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 366DD6542F340B5400AA97ED /* FavouritePoI.swift */; };
+		366DD6572F341D3100AA97ED /* MockPoiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 366DD6562F341D3100AA97ED /* MockPoiService.swift */; };
 		36F71DAE2F311CBE007874F7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 36F71DA92F311CBE007874F7 /* Assets.xcassets */; };
 		36F71DB12F311CBE007874F7 /* RVTripPlannerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36F71DAC2F311CBE007874F7 /* RVTripPlannerApp.swift */; };
 		36F71DB32F311CD9007874F7 /* Readme.md in Sources */ = {isa = PBXBuildFile; fileRef = 36F71DB22F311CD4007874F7 /* Readme.md */; };
@@ -89,6 +90,7 @@
 		366DD6502F34055600AA97ED /* MiniMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiniMapView.swift; sourceTree = "<group>"; };
 		366DD6522F3409A800AA97ED /* OpenClosedBadge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenClosedBadge.swift; sourceTree = "<group>"; };
 		366DD6542F340B5400AA97ED /* FavouritePoI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouritePoI.swift; sourceTree = "<group>"; };
+		366DD6562F341D3100AA97ED /* MockPoiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockPoiService.swift; sourceTree = "<group>"; };
 		36F71D7D2F311C25007874F7 /* RVTripPlanner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RVTripPlanner.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		36F71D8C2F311C27007874F7 /* RVTripPlannerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RVTripPlannerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		36F71DA92F311CBE007874F7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -131,6 +133,7 @@
 				366DD5E32F326CF800AA97ED /* HTTPClient.swift */,
 				366DD5E42F326CF800AA97ED /* HTTPError.swift */,
 				366DD5E62F326CF800AA97ED /* POIService.swift */,
+				366DD6562F341D3100AA97ED /* MockPoiService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -138,14 +141,12 @@
 		366DD5FD2F3296A500AA97ED /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				366DD65A2F341E4A00AA97ED /* ViewRows */,
 				366DD6502F34055600AA97ED /* MiniMapView.swift */,
 				366DD60D2F33CB5700AA97ED /* CustomPhotosPicker.swift */,
 				366DD60B2F33CB4A00AA97ED /* CustomTextField.swift */,
-				366DD5FE2F329AF600AA97ED /* GarageEmptyStateView.swift */,
-				366DD5F92F32866100AA97ED /* VehicleViewRow.swift */,
 				366DD5FB2F32969500AA97ED /* FuelBadge.swift */,
 				366DD6522F3409A800AA97ED /* OpenClosedBadge.swift */,
-				366DD61D2F33EB2700AA97ED /* PoIViewRow.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -165,6 +166,7 @@
 			isa = PBXGroup;
 			children = (
 				366DD5EF2F3279C400AA97ED /* GarageScreen.swift */,
+				366DD5FE2F329AF600AA97ED /* GarageEmptyStateView.swift */,
 				366DD6072F33CAD700AA97ED /* AddVehicleSheet.swift */,
 				366DD6082F33CAD700AA97ED /* EditVehicleSheet.swift */,
 			);
@@ -179,6 +181,35 @@
 				366DD64E2F33FABC00AA97ED /* PoIDetailsScreen.swift */,
 			);
 			path = Places;
+			sourceTree = "<group>";
+		};
+		366DD6582F341D4E00AA97ED /* PoI */ = {
+			isa = PBXGroup;
+			children = (
+				366DD5E52F326CF800AA97ED /* PoIModel.swift */,
+				366DD61F2F33EF4A00AA97ED /* PoIDTO.swift */,
+				366DD6542F340B5400AA97ED /* FavouritePoI.swift */,
+			);
+			path = PoI;
+			sourceTree = "<group>";
+		};
+		366DD6592F341D6200AA97ED /* Vehicle */ = {
+			isa = PBXGroup;
+			children = (
+				366DD5F32F3280E300AA97ED /* Vehicle.swift */,
+				366DD6112F33CC0C00AA97ED /* VehicleType.swift */,
+				366DD60F2F33CBFC00AA97ED /* FuelType.swift */,
+			);
+			path = Vehicle;
+			sourceTree = "<group>";
+		};
+		366DD65A2F341E4A00AA97ED /* ViewRows */ = {
+			isa = PBXGroup;
+			children = (
+				366DD5F92F32866100AA97ED /* VehicleViewRow.swift */,
+				366DD61D2F33EB2700AA97ED /* PoIViewRow.swift */,
+			);
+			path = ViewRows;
 			sourceTree = "<group>";
 		};
 		36F71D742F311C25007874F7 = {
@@ -226,12 +257,8 @@
 		36F71DB52F3121E2007874F7 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				366DD6112F33CC0C00AA97ED /* VehicleType.swift */,
-				366DD60F2F33CBFC00AA97ED /* FuelType.swift */,
-				366DD5E52F326CF800AA97ED /* PoIModel.swift */,
-				366DD61F2F33EF4A00AA97ED /* PoIDTO.swift */,
-				366DD5F32F3280E300AA97ED /* Vehicle.swift */,
-				366DD6542F340B5400AA97ED /* FavouritePoI.swift */,
+				366DD6592F341D6200AA97ED /* Vehicle */,
+				366DD6582F341D4E00AA97ED /* PoI */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -374,6 +401,7 @@
 				366DD6532F3409A800AA97ED /* OpenClosedBadge.swift in Sources */,
 				366DD5E82F326CF800AA97ED /* HTTPError.swift in Sources */,
 				366DD6042F33CA8700AA97ED /* Extensions+Data.swift in Sources */,
+				366DD6572F341D3100AA97ED /* MockPoiService.swift in Sources */,
 				366DD5F02F3279C400AA97ED /* GarageScreen.swift in Sources */,
 				366DD5E92F326CF800AA97ED /* POIService.swift in Sources */,
 				366DD6552F340B5400AA97ED /* FavouritePoI.swift in Sources */,

@@ -38,15 +38,3 @@ final class POIServiceImpl: POIService {
         }
     }
 }
-
-final class MockPoiService: POIService {
-    func getPoIs() async throws -> Result<PoIDTO, HTTPError> {
-        try await Task.sleep(for: .seconds(2))
-//        return .success(.init(pois: [.init(id: 1, name: "Name", url: "fjkaldlskj", primaryCategoryDisplayName: "Country road", rating: nil, imageURL: nil, loc: []), .init(id: 2, name: "Name", url: "fjkaldlskj", primaryCategoryDisplayName: "Country road", rating: nil, imageURL: nil, loc: [])], total: .init(value: 2, relation: "")))
-        return .failure(.serverError)
-    }
-    
-    private func loadStubbedPOI() -> [PoIDTO] {
-        return []
-    }
-}

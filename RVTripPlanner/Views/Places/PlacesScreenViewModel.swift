@@ -31,7 +31,6 @@ final class PlacesScreenViewModel {
             switch result {
             case let .success(dto):
                 self.pois = dto.pois
-                print(dump(dto.pois))
             case let .failure(error):
                 print("❌ Error in getting POIs: \(error)")
                 showAlert(message: "Something went wrong. Please try again later.")
