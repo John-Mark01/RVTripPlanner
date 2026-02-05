@@ -75,12 +75,10 @@ struct PlacesScreen: View {
                             .foregroundStyle(.textPrimary)
                     }
                 }
-                .listStyle(.plain)
+                .scrollContentBackground(.hidden)
                 .listSectionSpacing(AppConstants.vstackSpacing * 2)
                 .listRowSpacing(AppConstants.vstackSpacing / 2)
                 .listRowSeparator(.hidden)
-                .scrollContentBackground(.hidden)
-                
             case .map:
                 EmptyView()
                 
