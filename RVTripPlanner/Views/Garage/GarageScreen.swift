@@ -10,8 +10,8 @@ import SwiftData
 
 struct GarageScreen: View {
     @Environment(\.modelContext) private var modelContext
-    @Query private var vehicles: [Vehicle]
-    
+    @Query(animation: .smooth) private var vehicles: [Vehicle]
+  
     @State private var openSheet: Bool = false
     @State private var selectedVehicle: Vehicle?
     
@@ -35,7 +35,6 @@ struct GarageScreen: View {
         }
         .applyViewPaddings(.all)
         .applyBackground()
-        .animation(.bouncy, value: vehicles)
         .navigationTitle("Garage")
         .toolbar {
             ToolbarItem(placement: .topBarTrailing) {

@@ -10,7 +10,7 @@ import SwiftData
 
 struct PlacesScreen: View {
     @Environment(\.modelContext) private var modelContext
-    @Query private var favourites: [FavouritePoI]
+    @Query(animation: .smooth) private var favourites: [FavouritePoI]
     
     @State private var viewModel: PlacesScreenViewModel
     
@@ -33,22 +33,25 @@ struct PlacesScreen: View {
             case .list:
                 List {
                     //Favourites/Saved Section
-                    Section {
-                        ForEach(favourites, id: \.id) { savedPoi in
-                            PoIViewRow(
-                                imageURLString: savedPoi.imageURL,
-                                name: savedPoi.name,
-                                categoryName: savedPoi.primaryCategoryDisplayName,
-                                isOpen: savedPoi.isOpen,
-                                rating: savedPoi.rating
-                            )
+                    if !favourites.isEmpty {
+                        Section {
+                            ForEach(favourites, id: \.id) { savedPoi in
+                                PoIViewRow(
+                                    imageURLString: savedPoi.imageURL,
+                                    name: savedPoi.name,
+                                    categoryName: savedPoi.primaryCategoryDisplayName,
+                                    isOpen: savedPoi.isOpen,
+                                    rating: savedPoi.rating
+                                )
+                            }
+                            .onDelete { deleteFavouritePOI(at: $0) }
+                            
+                        } header: {
+                            Text("Favourites")
+                                .font(.title)
+                                .fontWeight(.heavy)
+                                .foregroundStyle(.textPrimary)
                         }
-                        
-                    } header: {
-                        Text("Favourites")
-                            .font(.title)
-                            .fontWeight(.heavy)
-                            .foregroundStyle(.textPrimary)
                     }
                     
                     //Recieved from Server Section
@@ -96,6 +99,12 @@ struct PlacesScreen: View {
             title: viewModel.alertTitle,
             message: viewModel.alertMessage
         )
+    }
+    
+    private func deleteFavouritePOI(at indexSet: IndexSet) {
+        for i in indexSet {
+            modelContext.delete(favourites[i])
+        }
     }
 }
 
