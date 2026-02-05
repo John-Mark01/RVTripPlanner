@@ -57,21 +57,13 @@ struct PlacesScreen: View {
         }
         .navigationTitle("Places")
         .task { await viewModel.fetchPOIs() }
-        //LOADING
-        .disabled(viewModel.isLoadingState)
-        .overlay(alignment: .center) {
-            if viewModel.isLoadingState {
-                ProgressView()
-                    .scaleEffect(2)
-            }
-        }
-        //ALERT
-        .alert(viewModel.alertTitle, isPresented: $viewModel.showAlert) {
-            Text("Dismiss")
-                .renderAsButton(action: {viewModel.showAlert = false})
-        } message: {
-            Text(viewModel.alertMessage)
-        }
+        .toolbarBackground(.hidden, for: .navigationBar)
+        .applyLoadingDialog(when: viewModel.isLoadingState)
+        .applyAlertHandling(
+            isPresented: $viewModel.showAlert,
+            title: viewModel.alertTitle,
+            message: viewModel.alertMessage
+        )
         
         
     }

@@ -146,3 +146,40 @@ struct CustomTextConfiguration: ViewModifier {
             .accessibilityLabel(Text(accLabel))
     }
 }
+
+//Alerts
+struct CustomAlertModifier: ViewModifier {
+    @Binding var isPresented: Bool
+    let title: String
+    let message: String
+    
+    
+    func body(content: Content) -> some View {
+        content
+            .alert(title, isPresented: $isPresented) {
+                Text("Dismiss")
+                    .renderAsButton(action: { isPresented = false })
+            } message: {
+                Text(message)
+            }
+    }
+}
+
+//Loading Dialog
+struct CustomLoadingDialogModifier: ViewModifier {
+    var isLoading: Bool
+    
+    func body(content: Content) -> some View {
+        content
+            .disabled(isLoading)
+            .overlay(alignment: .center) {
+                if isLoading {
+                    ProgressView()
+                        .scaleEffect(2)
+                        .tint(.appPrimary)
+                }
+            }
+    }
+}
+
+

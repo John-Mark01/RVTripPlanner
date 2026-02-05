@@ -36,4 +36,14 @@ extension View {
     func applyTextConfiguration(_ config: TextConfg, descrLabel: String) -> some View {
         modifier(CustomTextConfiguration(config: config, accLabel: descrLabel))
     }
+    
+    //Alerts
+    func applyAlertHandling(isPresented: Binding<Bool>, title: String, message: String) -> some View {
+        modifier(CustomAlertModifier(isPresented: isPresented, title: title, message: message))
+    }
+    
+    //Loading Dialog
+    func applyLoadingDialog(when isLoading: Bool) -> some View {
+        modifier(CustomLoadingDialogModifier(isLoading: isLoading))
+    }
 }
