@@ -31,24 +31,7 @@ struct PoIDetailsScreen: View {
             
             
             //Rating
-            HStack(spacing: AppConstants.vstackSpacing / 2) {
-                if let rating = poi.rating {
-                    Text("Rating Score:")
-                        .applyFont(.title)
-                        .foregroundStyle(Color.textPrimary)
-                    
-                    Spacer()
-                    
-                    HStack(spacing: 8) {
-                        ForEach(0..<5) { i in
-                            Image(systemName: "star.fill")
-                                .font(.title)
-                                .foregroundStyle(i <= Int(rating) ? .appSecondary : .gray)
-                        }
-                    }
-                    .frame(maxWidth: .infinity, alignment: .center)
-                }
-            }
+            PoIRatingView(ratingScore: poi.rating)
             
             //Save to Favourites
             Toggle(

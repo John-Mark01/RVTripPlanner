@@ -63,16 +63,10 @@ struct PoIViewRow: View {
                     )
                     .foregroundColor(.textPrimary)
                 
+                //Rating stars
                 if let rating = poi.rating {
-                    HStack(spacing: 8) {
-                        ForEach(0..<5) { i in
-                            Image(systemName: "star.fill")
-                                .font(.largeTitle)
-                                .foregroundStyle(i <= Int(rating) ? .appSecondary : .gray)
-                        }
-                    }
-                    .frame(maxWidth: .infinity, alignment: .center)
-                    .padding(.top, 4)
+                    RatingStarsRow(rating: rating)
+                        .padding(.top, 4)
                 }
             }
             .frame(maxWidth: .infinity, alignment: .leading)
