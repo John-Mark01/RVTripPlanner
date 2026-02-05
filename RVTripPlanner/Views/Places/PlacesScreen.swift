@@ -13,7 +13,6 @@ struct PlacesScreen: View {
     @Query private var favourites: [FavouritePoI]
     
     @State private var viewModel: PlacesScreenViewModel
-    @State private var selectedPOI: PoIModel?
     
     init(poiService: POIService) {
         self.viewModel = PlacesScreenViewModel(poiService: poiService)
@@ -33,18 +32,38 @@ struct PlacesScreen: View {
             switch viewModel.selectedTab {
             case .list:
                 List {
+                    //Favourites/Saved Section
+                    Section {
+                        ForEach(favourites, id: \.id) { savedPoi in
+                            PoIViewRow(
+                                imageURLString: savedPoi.imageURL,
+                                name: savedPoi.name,
+                                categoryName: savedPoi.primaryCategoryDisplayName,
+                                isOpen: savedPoi.isOpen,
+                                rating: savedPoi.rating
+                            )
+                        }
+                        
+                    } header: {
+                        Text("Favourites")
+                            .font(.title)
+                            .fontWeight(.heavy)
+                            .foregroundStyle(.textPrimary)
+                    }
+                    
+                    //Recieved from Server Section
                     Section {
                         ForEach(viewModel.pois, id: \.id) { poi in
-                            PoIViewRow(poi: poi)
-                                .overlay(alignment: .topLeading) {
-                                    if favourites.contains(where: { $0.id == poi.id }) {
-                                        Image(systemName: "star.circle")
-                                            .font(.largeTitle)
-                                            .foregroundStyle(.yellow)
-                                            .padding(10)
-                                    }
-                                }
-                                .onTapGesture { selectedPOI = poi }
+                            if !favourites.contains(where: { $0.id == poi.id }) {
+                                PoIViewRow(
+                                    imageURLString: poi.imageURL,
+                                    name: poi.name,
+                                    categoryName: poi.primaryCategoryDisplayName,
+                                    isOpen: poi.isOpen,
+                                    rating: poi.rating
+                                )
+                                .onTapGesture { viewModel.selectedPOI = poi }
+                            }
                         }
                     } header: {
                         Text("New")
@@ -53,6 +72,7 @@ struct PlacesScreen: View {
                             .foregroundStyle(.textPrimary)
                     }
                 }
+                .listSectionSpacing(AppConstants.vstackSpacing * 2)
                 .listRowSeparator(.hidden)
                 .listRowSpacing(AppConstants.vstackSpacing / 2)
                 .applyBackground()
@@ -63,7 +83,7 @@ struct PlacesScreen: View {
                 Spacer()
             }
         }
-        .navigationDestination(item: $selectedPOI) { poi in
+        .navigationDestination(item: $viewModel.selectedPOI) { poi in
             let isSaved = favourites.contains(where: { $0.id == poi.id })
             PoIDetailsScreen(poi: poi, isSaved: isSaved)
         }
@@ -76,8 +96,6 @@ struct PlacesScreen: View {
             title: viewModel.alertTitle,
             message: viewModel.alertMessage
         )
-        
-        
     }
 }
 

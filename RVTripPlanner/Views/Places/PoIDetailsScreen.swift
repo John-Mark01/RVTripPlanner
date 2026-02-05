@@ -66,7 +66,9 @@ struct PoIDetailsScreen: View {
         }
         .toolbar {
             ToolbarItem(placement: .topBarTrailing) {
-                OpenClosedBadge(isOpen: poi.isOpen)
+                if let isOpen = poi.isOpen {
+                    OpenClosedBadge(isOpen: isOpen)
+                }
             }
         }
     }

@@ -14,7 +14,9 @@ final class PlacesScreenViewModel {
     init(poiService: POIService) {
         self.poiService = poiService
     }
+    
     var pois: [PoIModel] = []
+    var selectedPOI: PoIModel?
     
     var selectedTab: PlacesTabs = .list
     var isLoadingState: Bool = false

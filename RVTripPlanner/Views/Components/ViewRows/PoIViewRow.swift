@@ -8,7 +8,12 @@
 import SwiftUI
 
 struct PoIViewRow: View {
-    let poi: PoIModel
+    
+    let imageURLString: String?
+    let name: String
+    let categoryName: String
+    let isOpen: Bool?
+    let rating: Double?
     
     var body: some View {
         VStack(spacing: 0) {
@@ -16,7 +21,7 @@ struct PoIViewRow: View {
             //POI Image + Badge
             ZStack(alignment: .topTrailing) {
                 
-                AsyncImage(url: URL(string: poi.imageURL ?? "")) { image in
+                AsyncImage(url: URL(string: imageURLString ?? "")) { image in
                     image
                         .resizable()
                 } placeholder: {
@@ -33,14 +38,16 @@ struct PoIViewRow: View {
                     style: .continuous)
                 )
                 
-                //Badge
-                OpenClosedBadge(isOpen: poi.isOpen)
+                //Open/Closed Badge
+                if let isOpen {
+                    OpenClosedBadge(isOpen: isOpen)
+                }
             }
             
             VStack(alignment: .leading, spacing: 6) {
                 
                 // Name
-                Text(poi.name)
+                Text(name)
                     .applyFont(.title)
                     .applyTextConfiguration(
                         .multiline(
@@ -52,7 +59,7 @@ struct PoIViewRow: View {
                     .foregroundColor(.textSecondary)
                 
                 // Category
-                Text(poi.primaryCategoryDisplayName)
+                Text(categoryName)
                     .applyFont(.headline)
                     .applyTextConfiguration(
                         .multiline(
@@ -64,7 +71,7 @@ struct PoIViewRow: View {
                     .foregroundColor(.textPrimary)
                 
                 //Rating stars
-                if let rating = poi.rating {
+                if let rating {
                     RatingStarsRow(rating: rating)
                         .padding(.top, 4)
                 }
@@ -94,7 +101,13 @@ struct PoIViewRow: View {
     )
     
     VStack {
-        PoIViewRow(poi: poi)
+        PoIViewRow(
+            imageURLString: poi.imageURL,
+            name: poi.name,
+            categoryName: poi.primaryCategoryDisplayName,
+            isOpen: poi.isOpen,
+            rating: poi.rating
+        )
     }
     .applyViewPaddings(.all)
     .applyBackground()
